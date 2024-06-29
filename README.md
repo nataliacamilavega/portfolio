@@ -1,10 +1,10 @@
-# PORTAFOLIO REACT NATIVE - COMPONENTES ESTILIZADOS
+# PORTAFOLIO REACT - COMPONENTES ESTILIZADOS
 - **Última actualización:** 31 de mayo de 2023
 - **Versión:** 1.0.0
 - **link del proyecto:** [Portafolio Natalia Vega](https://nataliavega-portfolio.vercel.app/)
 
 ## Descripción
-Este proyecto es un portafolio personal desarrollado en React Native. El proyecto incluye una página de inicio, una página de proyectos, una página de habilidades y una página de contacto. El proyecto incluye un tema oscuro y claro, así como la posibilidad de cambiar el idioma entre inglés y español. Además, el proyecto incluye la posibilidad de descargar el CV en inglés y español.
+Este proyecto es un portafolio personal desarrollado en React. El proyecto incluye una página de inicio, una página de proyectos, una página de habilidades y una página de contacto. El proyecto incluye un tema oscuro y claro, así como la posibilidad de cambiar el idioma entre inglés y español. Además, el proyecto incluye la posibilidad de descargar el CV en inglés y español.
 
 ## Tecnologías Utilizadas
 - React Native
