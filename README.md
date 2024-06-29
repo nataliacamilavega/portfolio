@@ -1,4 +1,4 @@
-# PORTAFOLIO REACT - COMPONENTES ESTILIZADOS
+# PORTAFOLIO REACT - Natalia Vega
 - **Última actualización:** 31 de mayo de 2023
 - **Versión:** 1.0.0
 - **Link del proyecto:** [Portafolio Natalia Vega](https://nataliavega-portfolio.vercel.app/)
