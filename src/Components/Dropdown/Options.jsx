@@ -1,16 +1,13 @@
-// React imports
-import React from "react";
-
 // Style
-import styled, { css, keyframes } from "styled-components";
+import styled from 'styled-components'
 const Options = ({ text, img, icon, id, setterLanguage }) => {
   const ButtonOption = styled.button`
     border: none;
     display: flex;
     gap: 4px;
 
-    font-family: "Roboto", sans-serif;
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -23,7 +20,7 @@ const Options = ({ text, img, icon, id, setterLanguage }) => {
     height: 52px;
     width: 90px;
     border-radius: 100px;
-    background-color: "";
+    background-color: '';
 
     cursor: pointer;
     color: ${(props) => props.theme.mode.colors.text};
@@ -34,18 +31,17 @@ const Options = ({ text, img, icon, id, setterLanguage }) => {
       width: 100%;
     }
     &:hover {
-      background-color: ${(propsTheme) =>
-        propsTheme.theme.mode.colors.lightGrey};
+      background-color: ${(propsTheme) => propsTheme.theme.mode.colors.lightGrey};
     }
-  `;
+  `
 
   return (
     <ButtonOption onClick={() => id && setterLanguage(id)}>
-      <img src={`assets/` + img} alt="" width={`20px`} />
+      <img alt="" src={`assets/icons/` + img} width={`20px`} />
       {text}
       {icon}
     </ButtonOption>
-  );
-};
+  )
+}
 
-export default Options;
+export default Options

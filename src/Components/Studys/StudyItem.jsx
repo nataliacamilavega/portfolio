@@ -1,10 +1,6 @@
-// React imports
-import React from "react";
+import styled from 'styled-components'
+import { IoIosArrowForward } from 'react-icons/io'
 
-// Style
-import styled from "styled-components";
-import Theme from "../Theme/Theme";
-import { IoIosArrowForward } from "react-icons/io";
 const StudyItem = ({
   school,
   schoolLogo,
@@ -12,13 +8,10 @@ const StudyItem = ({
   grade,
   credential,
   project,
-  link,
   startDate,
   finishDate,
-  studySelected,
   setterStudySelected,
   gradeP,
-
 }) => {
   const Container = styled.div`
     display: flex;
@@ -34,7 +27,7 @@ const StudyItem = ({
       height: 300px;
       gap: 24px;
     }
-  `;
+  `
   const DateLine = styled.div`
     display: flex;
     flex-direction: column;
@@ -46,7 +39,7 @@ const StudyItem = ({
       align-items: start;
       width: 3px;
     }
-  `;
+  `
   const StudyInfoContainer = styled.div`
     display: flex;
     gap: 8px;
@@ -83,7 +76,7 @@ const StudyItem = ({
       height: fit-content;
       flex-direction: column;
     }
-  `;
+  `
   const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -93,78 +86,68 @@ const StudyItem = ({
       width: 100%;
       text-align: center;
     }
-  `;
+  `
   const H3 = styled.h3`
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-  `;
+  `
   const H4 = styled.h4`
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
     font-size: 14x;
-  `;
+  `
   const DateP = styled.div`
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     padding: 16px 0;
-  `;
+  `
   const Italic = styled.span`
     font-style: italic;
-  `;
+  `
   const Divider = styled.div`
     height: 100%;
     width: 3px;
     border-radius: 5px;
-    background-color: ${(propsTheme) =>
-      propsTheme.theme.mode.colors.darkYellow};
-  `;
+    background-color: ${(propsTheme) => propsTheme.theme.mode.colors.darkYellow};
+  `
 
   const activateDisplay = () => {
-    !project || !credential
-      ? setterStudySelected(undefined)
-      : setterStudySelected(degree);
-  };
+    !project || !credential ? setterStudySelected(undefined) : setterStudySelected(degree)
+  }
+
   return (
     <Container>
       <DateLine>
         {finishDate && <DateP>{finishDate}</DateP>}
-        <Divider></Divider>
+        <Divider />
         {startDate && <DateP>{startDate}</DateP>}
       </DateLine>
       <StudyInfoContainer
         onClick={() => activateDisplay()}
-        style={
-          project || credential ? { cursor: "pointer" } : { cursor: "default" }
-        }
+        style={project || credential ? { cursor: 'pointer' } : { cursor: 'default' }}
       >
-        <img
-          src={`assets/` + schoolLogo}
-          alt={`Logo` + school}
-          className="imgLogo"
-        />
+        <img alt={`Logo` + school} className="imgLogo" src={`assets/logos/` + schoolLogo} />
         <TextContainer>
           <H3>{school}</H3>
           <H4>
             {degree}
             {grade && (
               <Italic>
-                {" "}
+                {' '}
                 - {gradeP}: {grade}
               </Italic>
             )}
           </H4>
         </TextContainer>
-        {(project || credential) && (
-          <IoIosArrowForward className="arrowRight" />
-        )}
+        {(project || credential) && <IoIosArrowForward className="arrowRight" />}
       </StudyInfoContainer>
     </Container>
-  );
-};
+  )
+}
 
-export default StudyItem;
+export default StudyItem

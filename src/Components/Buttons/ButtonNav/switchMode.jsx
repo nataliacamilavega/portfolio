@@ -1,8 +1,6 @@
 // React imports
-import React, { useContext } from "react";
-
-// Style
-import styled, { ThemeContext } from "styled-components";
+import { useContext } from 'react'
+import styled, { ThemeContext } from 'styled-components'
 
 const SwitchMode = ({ stateMenu }) => {
   const Contenedor = styled.div`
@@ -25,7 +23,7 @@ const SwitchMode = ({ stateMenu }) => {
       position: absolute;
       top: 0;
       left: 0;
-      content: "";
+      content: '';
       width: 100%;
       height: 100%;
 
@@ -35,9 +33,8 @@ const SwitchMode = ({ stateMenu }) => {
     }
     @media (max-width: 960px) {
       display: ${stateMenu ? `flex` : `none`};
-      
     }
-  `;
+  `
   const MoonSun = styled.div`
     background-color: ${(props) => props.theme.mode.switchStyle.msColor};
     box-shadow: ${(props) => props.theme.mode.switchStyle.msBS};
@@ -49,7 +46,7 @@ const SwitchMode = ({ stateMenu }) => {
     transition: all 5s linear;
 
     &:after {
-      content: "";
+      content: '';
       position: ${(props) => props.theme.mode.switchStyle.msAfterP};
       width: 10px;
       height: 10px;
@@ -60,29 +57,31 @@ const SwitchMode = ({ stateMenu }) => {
       right: -2px;
       transition: all 5s linear;
     }
-  `;
+  `
 
   //Fx para setear en el localStorage el mode
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext)
 
   const setterThemeMode = () => {
-    const localMode = themeContext.themeMode === `light` ? `dark` : `light`;
-    themeContext.setThemeMode(localMode);
-    window.localStorage.setItem(`themeMode`, localMode);
-  };
+    const localMode = themeContext.themeMode === `light` ? `dark` : `light`
+
+    themeContext.setThemeMode(localMode)
+    window.localStorage.setItem(`themeMode`, localMode)
+  }
 
   const fxOnclick = () => {
-    setterThemeMode();
-  };
+    setterThemeMode()
+  }
+
   return (
     <Contenedor
       onClick={() => {
-        fxOnclick();
+        fxOnclick()
       }}
     >
-      <MoonSun></MoonSun>
+      <MoonSun />
     </Contenedor>
-  );
-};
+  )
+}
 
-export default SwitchMode;
+export default SwitchMode

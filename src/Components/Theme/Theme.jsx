@@ -1,19 +1,19 @@
-import React, { useState, useEffect, useContext } from "react";
-import { ThemeProvider } from "styled-components";
-import styled from "styled-components";
+import React, { useState, useEffect } from 'react'
+import { ThemeProvider } from 'styled-components'
+import styled from 'styled-components'
 
 //#Componentes AboutMe
 const P = styled.p`
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   text-align: justify;
-`;
+`
 const Span = styled.span`
   color: ${(propsTheme) => propsTheme.theme.mode.colors.purple};
   font-weight: 500;
-`;
+`
 
 //Temas
 const light = {
@@ -72,7 +72,7 @@ const light = {
   switchStyle: {
     contenedorBgC: `#87C6FF`,
     contenedorJC: `flex-start`,
-    bgURL: `assets/whiteClouds.svg`,
+    bgURL: `../../assets/custom/whiteClouds.svg`,
     msColor: `#ffc187`,
     msBS: `-3.9px 6.5px 5.2px rgba(183, 183, 183, 0.35),
     0px 0px 11.7px rgba(255, 193, 135, 0.6), inset 0px -2.6px 5.2px #ffa149,
@@ -88,13 +88,13 @@ const light = {
     text1: `#653939`,
     text2: `#bc6a69`,
   },
-  fonts: ["sans-serif", "Roboto"],
+  fonts: ['sans-serif', 'Roboto'],
   fontSizes: {
-    small: "1em",
-    medium: "2em",
-    large: "3em",
+    small: '1em',
+    medium: '2em',
+    large: '3em',
   },
-};
+}
 const dark = {
   colors: {
     // Background
@@ -151,7 +151,7 @@ const dark = {
   switchStyle: {
     contenedorBgC: `#1F2533`,
     contenedorJC: `flex-end`,
-    bgURL: `assets/whiteStars.svg`,
+    bgURL: `../../assets/custom/whiteStars.svg`,
     msColor: `#ffffff`,
     msBS: `-3.9px 0px 19.5px rgba(183, 183, 183, 0.31),
     inset 0px -2.6px 5.2px #ffffff, inset 0px 2.6px 5.2px #bfbfc0;`,
@@ -165,13 +165,13 @@ const dark = {
     text1: `#f9ebff`,
     text2: `#f1bbff`,
   },
-  fonts: ["sans-serif", "Roboto"],
+  fonts: ['sans-serif', 'Roboto'],
   fontSizes: {
-    small: "1em",
-    medium: "2em",
-    large: "3em",
+    small: '1em',
+    medium: '2em',
+    large: '3em',
   },
-};
+}
 
 // Idiomas
 const ES = {
@@ -187,32 +187,33 @@ const ES = {
     h2: `Sobre Mi`,
     p1: (
       <P>
-        Soy una persona <Span>creativa</Span>, <Span>entusiasta</Span> y
-        <Span> responsable</Span>. A comienzos del año 2022 decidí tomar un
-        rumbo distinto con mi vida profesional y cambié de estudiar odontología
-        a dedicarme al diseño y desarrollo web.
+        Soy una persona <Span>creativa</Span>, <Span>entusiasta</Span> y <Span>responsable</Span>.
+        Actualmente, estoy cursando una <Span>tecnicatura superior en desarrollo de software</Span>,
+        lo que me permite seguir ampliando mis conocimientos y crecer en mi carrera.
       </P>
     ),
     p2: (
       <P>
-        Realicé cursos de Diseño UX UI y además proyectos donde cumplí este rol.
-        Luego comencé a estudiar desarrollo web aprendiendo
-        <Span> HTML5</Span>,<Span> CSS3</Span>,<Span> JavaScript</Span> y
-        <Span> React JS</Span>. También poseo proyectos integradores, te invito
-        a verlos más abajo 😊.{" "}
+        Comencé mi carrera en <Span>2022</Span> estudiando <Span>diseño UX/UI</Span> y realizando{' '}
+        proyectos freelance. Luego, me especialicé en <Span>desarrollo web</Span> con{' '}
+        <Span>React JS</Span>, <Span>Next.js</Span>, <Span>JavaScript</Span> y{' '}
+        <Span>TypeScript</Span>.
       </P>
     ),
     p3: (
       <P>
-        Me gusta trabajar en equipo por lo que considero que tengo la capacidad
-        de adaptarme rápidamente, empatizar y comunicarme claramente. Además,
-        soy atenta a los detalles y puedo resolver problemas emergentes.
+        Desde <Span>julio de 2023</Span>, trabajé como <Span>desarrolladora frontend</Span>,
+        enfocándome en páginas web y sistemas de gestión. En <Span>febrero de 2024</Span>, amplié mi
+        enfoque al <Span>desarrollo mobile</Span>, creando aplicaciones para <Span>iOS</Span> y{' '}
+        <Span>Android</Span> con <Span>React Native</Span>, integrando mis conocimientos de{' '}
+        <Span>frontend</Span> y <Span>UX/UI</Span>.
       </P>
     ),
     p4: (
       <P>
-        Espero conseguir un puesto laboral donde pueda emplear mis conocimientos
-        actuales y tener la oportunidad de seguir ampliándolos
+        Disfruto <Span>trabajar en equipo</Span>, adaptándome rápidamente, con <Span>empatía</Span>{' '}
+        y <Span>comunicación clara</Span>. Soy <Span>atenta a los detalles</Span> y efectiva en{' '}
+        <Span>resolver problemas emergentes</Span>.
       </P>
     ),
   },
@@ -293,6 +294,18 @@ const ES = {
     ac1it1: `Diseño UX UI`,
     ac1it2: `Desarrollo Front-End`,
     skillsP: `Habilidades desarrolladas`,
+    epsilonarEncuesta: {
+      title: `EPSILONAR - Encuesta Online`,
+      subtitle: `Desarrollo e implementación del diseño propuesto por el cliente.`,
+      date: `Ene. 2024 - Ene. 2024`,
+      text: [
+        `Desarrollo realizado con NextJS y TypeScript`,
+        `Posicionamiento en el SEO`,
+        `Entrevista con el líder de la empresa`,
+        `Embebido de formulario`,
+      ],
+      comment: `Proyecto freelance`,
+    },
     moveFinanciera: {
       title: `MOVE - Financiera`,
       subtitle: `Rediseño y prototipado de un sistema financiero.`,
@@ -304,9 +317,9 @@ const ES = {
         `Análisis UX`,
         `Nueva arquitectura de la información`,
         `Userflow`,
-        `Nuevos caminos en el sistema`
+        `Nuevos caminos en el sistema`,
       ],
-      comment: `Proyecto freelance realizado junto a un desarrollador web full stack.”`,
+      comment: `Proyecto freelance realizado junto a un desarrollador web full stack.`,
     },
     beautyCosmetics: {
       title: `“Beauty Cosmetics” - E-commerce de cosméticos`,
@@ -342,11 +355,7 @@ const ES = {
       title: `“LIMSA: Limpiador de zapatillas” - Landing page`,
       subtitle: `Creación, investigación y diseño de una landing page para comercializar un producto de limpieza da calzado.`,
       date: `Sep. 2022 - Nov. 2022`,
-      text: [
-        `Diseño interactivo`,
-        `Responsive design`,
-        `Research y benchmarking`,
-      ],
+      text: [`Diseño interactivo`, `Responsive design`, `Research y benchmarking`],
       comment: `Proyecto realizado en equipo junto un diseñador UX UI y dos desarrolladores Front-End.`,
     },
     hbomax: {
@@ -375,11 +384,7 @@ const ES = {
       title: `“Gina: Una perrita muy dulce” - cuento digital interactivo`,
       subtitle: `Diseño y desarrollo de cuento digital interactivo desarrollado en página web dónde el lector puede elegir su trayecto a través de la historia.`,
       date: `Sep. 2022 - Nov. 2022`,
-      text: [
-        `Diseño interactivo`,
-        `Maquetado y desarrollo con HTML y CSS`,
-        `Responsive design`,
-      ],
+      text: [`Diseño interactivo`, `Maquetado y desarrollo con HTML y CSS`, `Responsive design`],
       comment: `Proyecto realizado en equipo junto a la autora de la historia.  En este trabajo ejercí el rol de Diseñadora y Desarrolladora (HTML y CSS).`,
     },
     vf: {
@@ -430,11 +435,11 @@ const ES = {
       comment: `Proyecto integrador asociado a “Diseño web - NUCBA”`,
     },
   },
-  resume: `cvES.pdf`,
+  resume: `cv_Natalia_Vega.pdf`,
   footer: {
     p1: `Página diseñada y desarrollada por Natalia Vega`,
   },
-};
+}
 const EN = {
   navBar: {
     p1: `About Me`,
@@ -448,32 +453,34 @@ const EN = {
     h2: `About Me`,
     p1: (
       <P>
-        I am a <Span>creative</Span>, <Span>enthusiastic</Span>, and{" "}
-        <Span>responsible</Span> person. At the beginning of 2022 I decided to
-        take my professional path in another direction which led me to change
-        from studying dentistry to web design and development.
+        I am a <Span>creative</Span>, <Span>enthusiastic</Span>, and <Span>responsible</Span>{' '}
+        person. Currently, I am pursuing a{' '}
+        <Span>higher technical degree in software development</Span>, which allows me to
+        continuously expand my knowledge and grow in my career.
       </P>
     ),
     p2: (
       <P>
-        I did UX UI design courses and some projects where I fulfilled that
-        role. Then I proceeded with web development by learning{" "}
-        <Span>HTML5</Span>, <Span>CSS3</Span>,<Span>JavaScript</Span> and{" "}
-        <Span>React JS</Span>. I have some integrating projects I invite you to
-        see in the section called “Projects”.
+        I started my career in <Span>2022</Span> by studying <Span>UX/UI design</Span> and working
+        on freelance projects. Later, I specialized in <Span>web development</Span> using{' '}
+        <Span>React JS</Span>, <Span>Next.js</Span>, <Span>JavaScript</Span>, and{' '}
+        <Span>TypeScript</Span>.
       </P>
     ),
     p3: (
       <P>
-        I am a team worker, so I consider I have the ability to adapt quickly,
-        empathise, and communicate clearly. Furthermore, I pay attention to
-        details and I can solve emerging issues.
+        Since <Span>July 2023</Span>, I have worked as a <Span>frontend developer</Span>, focusing
+        on web pages and management systems. In <Span>February 2024</Span>, I expanded my focus to{' '}
+        <Span>mobile development</Span>, creating applications for <Span>iOS</Span> and{' '}
+        <Span>Android</Span> using <Span>React Native</Span>, integrating my knowledge of{' '}
+        <Span>frontend</Span> and <Span>UX/UI</Span>.
       </P>
     ),
     p4: (
       <P>
-        I expect to get a job position where I can use my skills and keep
-        expanding them.
+        I enjoy <Span>working in a team</Span>, adapting quickly with <Span>empathy</Span> and{' '}
+        <Span>clear communication</Span>. I am <Span>detail-oriented</Span> and effective in{' '}
+        <Span>solving emerging problems</Span>.
       </P>
     ),
   },
@@ -547,6 +554,18 @@ const EN = {
     ac1it1: `UX UI Design `,
     ac1it2: `Front End Development`,
     skillsP: `Skills developed`,
+    epsilonarEncuesta: {
+      title: `EPSILONAR - Online Survey`,
+      subtitle: `Development and implementation of the client's proposed design.`,
+      date: `Jan. 2024 - Jan. 2024`,
+      text: [
+        `Developed using NextJS and TypeScript`,
+        `SEO optimization`,
+        `Interview with the company leader`,
+        `Form embedding`,
+      ],
+      comment: `Freelance project`,
+    },
     moveFinanciera: {
       title: `MOVE - Financial`,
       subtitle: ` Redesign and prototyped of a finance system .`,
@@ -558,7 +577,7 @@ const EN = {
         `UX Analysis`,
         `New information architecture`,
         `Userflow`,
-        `New paths in the system`
+        `New paths in the system`,
       ],
       comment: `Freelance project carried out as a team together with a developer ”`,
     },
@@ -596,11 +615,7 @@ const EN = {
       title: `“LIMSA: Shoe cleaner” - Landing page`,
       subtitle: ` Creation, research and design of a landing page to market a shoe cleaning product.`,
       date: `Sep. 2022 - Nov. 2022`,
-      text: [
-        ` Interactive design`,
-        `Responsive design`,
-        ` Research and benchmarking`,
-      ],
+      text: [` Interactive design`, `Responsive design`, ` Research and benchmarking`],
       comment: ` Project carried out as a team with a UX UI designer and two Front-End developers. In this job I performed the role of UX UI Designer. .`,
     },
     hbomax: {
@@ -685,31 +700,31 @@ const EN = {
   },
   modal: {
     title: `Resume`,
-    text: `Would you like to open a new window to see the Resume in PDF format?`,
+    text: `Would you like to open a new window to see the Resume in PDF format?`,
     accept: `accept`,
     decline: `decline`,
   },
-  resume: `cvEN.pdf`,
+  resume: `resume_Natalia_Vega.pdf`,
   footer: {
     p1: `Web page design and developed by Natalia Vega`,
   },
-};
+}
 
-const langs = { ES, EN };
-const themes = { light, dark };
+const langs = { ES, EN }
+const themes = { light, dark }
 
 const Theme = ({ children }) => {
-  const [themeMode, setThemeMode] = useState("light");
-  const [langSelected, setLangSelected] = useState("ES");
+  const [themeMode, setThemeMode] = useState('light')
+  const [langSelected, setLangSelected] = useState('ES')
 
   useEffect(() => {
     if (window.localStorage.getItem(`themeMode`)) {
-      setThemeMode(window.localStorage.getItem(`themeMode`));
+      setThemeMode(window.localStorage.getItem(`themeMode`))
     }
     if (window.localStorage.getItem(`localLanguage`)) {
-      setLangSelected(window.localStorage.getItem(`localLanguage`));
+      setLangSelected(window.localStorage.getItem(`localLanguage`))
     }
-  }, []);
+  }, [])
 
   return (
     <ThemeProvider
@@ -724,7 +739,7 @@ const Theme = ({ children }) => {
     >
       {children}
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default Theme;
+export default Theme

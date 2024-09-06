@@ -1,8 +1,4 @@
-import React from "react";
-
-// Style
-import Theme from "../Theme/Theme";
-import styled, { css, keyframes } from "styled-components";
+import styled from 'styled-components'
 
 const tecnicalItem = ({ thname, icon }) => {
   const Container = styled.div`
@@ -18,23 +14,23 @@ const tecnicalItem = ({ thname, icon }) => {
     .filter {
       filter: ${(props) => props.theme.mode.filterInvert};
     }
-  `;
+  `
   const P = styled.p`
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     font-variant: all-small-caps;
     padding: 0 8px;
     text-align: center;
-  `;
+  `
   const equalTo = (value, skill) => {
-    return value == skill;
-  };
+    return value === skill
+  }
+
   return (
     <Container>
       <img
-        src={`assets/` + icon}
         alt={`imagen de` + thname}
         className={
           equalTo(thname, `github`) ||
@@ -43,10 +39,11 @@ const tecnicalItem = ({ thname, icon }) => {
             ? `filter`
             : ``
         }
+        src={`assets/icons/` + icon}
       />
       <P>{thname}</P>
     </Container>
-  );
-};
+  )
+}
 
-export default tecnicalItem;
+export default tecnicalItem

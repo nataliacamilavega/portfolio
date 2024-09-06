@@ -1,13 +1,11 @@
-// React imports
-import React, { useState, useContext } from "react";
+import { useState, useContext } from 'react'
+import styled, { ThemeContext } from 'styled-components'
+import { MdKeyboardArrowDown } from 'react-icons/md'
 
-// Style
-import styled, { ThemeContext } from "styled-components";
-import Options from "./Options";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import Options from './Options'
 
 const DropDown = ({ stateMenu }) => {
-  const [dropdown, setDropdown] = useState(false);
+  const [dropdown, setDropdown] = useState(false)
 
   const Container = styled.div`
     display: flex;
@@ -19,7 +17,7 @@ const DropDown = ({ stateMenu }) => {
       justify-content: center;
       width: 100%;
     }
-  `;
+  `
   const OptionsContainer = styled.div`
     background-color: ${(propsTheme) => propsTheme.theme.mode.colors.bgNavBar};
     display: ${dropdown ? `flex` : `none`};
@@ -28,7 +26,7 @@ const DropDown = ({ stateMenu }) => {
     top: 56px;
     width: 100%;
     border-radius: 7px;
-  `;
+  `
 
   const languageSettings = [
     {
@@ -41,52 +39,51 @@ const DropDown = ({ stateMenu }) => {
       img: `english.svg`,
       id: `EN`,
     },
-  ];
+  ]
 
   //Fx para setear en el localStorage el mode
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useContext(ThemeContext)
 
   const setLanguage = (id) => {
-    themeContext.setLangSelected(id);
-    window.localStorage.setItem(`localLanguage`, id);
-  };
+    themeContext.setLangSelected(id)
+    window.localStorage.setItem(`localLanguage`, id)
+  }
   // Renderizado de options
   const renderOptions = languageSettings.map((option) => (
     <Options
-      text={option.text}
-      img={option.img}
       key={option.id}
       id={option.id}
+      img={option.img}
       setterLanguage={setLanguage}
-    ></Options>
-  ));
+      text={option.text}
+    />
+  ))
 
   const renderSelected = () => {
-    const selected = languageSettings.find(
-      (lang) => lang.id === themeContext.langSelected
-    );
+    const selected = languageSettings.find((lang) => lang.id === themeContext.langSelected)
 
     return (
       <Options
-        text={selected.text}
-        img={selected.img}
-        icon={<MdKeyboardArrowDown />}
         key={selected.id}
+        icon={<MdKeyboardArrowDown />}
         id={selected.id}
-      ></Options>
-    );
-  };
+        img={selected.img}
+        text={selected.text}
+      />
+    )
+  }
 
   const fxOnclick = () => {
-    setDropdown(!dropdown);
-  };
+    setDropdown(!dropdown)
+  }
+
   return (
     <Container onClick={() => fxOnclick()}>
       {themeContext.langSelected && renderSelected()}
       {/* Contenedor de opciones */}
       <OptionsContainer>{renderOptions}</OptionsContainer>
     </Container>
-  );
-};
+  )
+}
 
-export default DropDown;
+export default DropDown

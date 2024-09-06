@@ -1,10 +1,8 @@
-// React
-import React, { useState } from "react";
+import { useState } from 'react'
+import styled, { useTheme } from 'styled-components'
 
-// Styled
-import styled, { useTheme } from "styled-components";
-import FilterItem from "./FilterItem";
-import ProjectItem from "./ProjectItem";
+import FilterItem from './FilterItem'
+import ProjectItem from './ProjectItem'
 
 const Container = styled.section`
   width: 100%;
@@ -15,40 +13,40 @@ const Container = styled.section`
   @media (max-width: 960px) {
     padding-top: 56px;
   }
-`;
+`
 const FilterContainer = styled.article`
   display: flex;
   flex-direction: column;
   gap: 16px;
-`;
+`
 const FilterItemContainer = styled.article`
   display: flex;
   gap: 32px;
   @media (max-width: 600px) {
     flex-direction: column;
   }
-`;
+`
 const H2 = styled.h2`
-  font-family: "Convergence";
+  font-family: 'Convergence';
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   color: ${(propsTheme) => propsTheme.theme.mode.colors.blue};
-`;
+`
 const H3 = styled.h3`
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-`;
+`
 const ProjectsContainer = styled.article`
   display: flex;
   flex-direction: column;
   gap: 24px;
-`;
+`
 const Projects = () => {
   // Para cambiar el idioma y usar el theme fuera de styled components
-  const theme = useTheme();
+  const theme = useTheme()
   const filters = [
     // Segun rol ejercido
     {
@@ -63,18 +61,43 @@ const Projects = () => {
       filterType: theme.lang.projects.according2,
       filter: [
         { name: `JS Vanilla`, color: `lightBlue`, id: 1 },
+        { name: `TypeScript`, color: `lightBlue`, id: 4 },
         { name: `React JS`, color: `lightBlue`, id: 2 },
+        { name: `React Native`, color: `lightBlue`, id: 5 },
+        { name: `NextJS`, color: `lightBlue`, id: 3 },
       ],
     },
-  ];
+  ]
   const projectsCollection = [
+    // Epsilonar Encuesta
+    {
+      id: 9,
+      title: theme.lang.projects.epsilonarEncuesta.title,
+      subtitle: theme.lang.projects.epsilonarEncuesta.subtitle,
+      date: theme.lang.projects.epsilonarEncuesta.date,
+      filterTag: [{ name: theme.lang.projects.ac1it2, color: 'lightPurple' }],
+      skillsTag: [
+        `Freelance`,
+        `Responsive Design`,
+        `NextJS`,
+        `TypeScript`,
+        `ReactJS`,
+        `SEO`,
+        `GitHub`,
+        `VSCode`,
+      ],
+      image: `epsilonarCover.png`,
+      text: theme.lang.projects.epsilonarEncuesta.text,
+      link: `https://www.epsilonar.online/`,
+      comment: theme.lang.projects.epsilonarEncuesta.comment,
+    },
     // Move Financiera
     {
       id: 9,
       title: theme.lang.projects.moveFinanciera.title,
       subtitle: theme.lang.projects.moveFinanciera.subtitle,
       date: theme.lang.projects.moveFinanciera.date,
-      filterTag: [{ name: theme.lang.projects.ac1it1, color: "lightPink" }],
+      filterTag: [{ name: theme.lang.projects.ac1it1, color: 'lightPink' }],
       skillsTag: [
         `Freelance`,
         `Prototipado`,
@@ -86,7 +109,7 @@ const Projects = () => {
         `UXTweak`,
         `Ps`,
       ],
-      image: `reporteMove.png`,
+      image: `reportMove.png`,
       text: theme.lang.projects.moveFinanciera.text,
       behance: `https://www.behance.net/gallery/171044901/MOVE-Financiera-Rediseno-de-sistema?`,
       comment: theme.lang.projects.moveFinanciera.comment,
@@ -97,7 +120,7 @@ const Projects = () => {
       title: theme.lang.projects.beautyCosmetics.title,
       subtitle: theme.lang.projects.beautyCosmetics.subtitle,
       date: theme.lang.projects.beautyCosmetics.date,
-      filterTag: [{ name: theme.lang.projects.ac1it2, color: "lightPurple" }],
+      filterTag: [{ name: theme.lang.projects.ac1it2, color: 'lightPurple' }],
       skillsTag: [
         `HTML5`,
         `CSS3`,
@@ -110,7 +133,7 @@ const Projects = () => {
       ],
       image: `coderReactProject.png`,
       text: theme.lang.projects.beautyCosmetics.text,
-      gitHub: `https://github.com/nataliacamilavega/Beauty-Cosmetics`,
+      gitHub: `https://github.com/nataliavega98/Beauty-Cosmetics`,
       link: ` https://beautycosmetics.vercel.app/`,
       comment: theme.lang.projects.beautyCosmetics.comment,
     },
@@ -120,19 +143,11 @@ const Projects = () => {
       title: theme.lang.projects.gamingStore.title,
       subtitle: theme.lang.projects.gamingStore.subtitle,
       date: theme.lang.projects.gamingStore.date,
-      filterTag: [{ name: theme.lang.projects.ac1it2, color: "lightPurple" }],
-      skillsTag: [
-        `HTML5`,
-        `CSS3`,
-        `JS Vanilla`,
-        `Responsive design`,
-        `APIs`,
-        `VSCode`,
-        `GitHub`,
-      ],
+      filterTag: [{ name: theme.lang.projects.ac1it2, color: 'lightPurple' }],
+      skillsTag: [`HTML5`, `CSS3`, `JS Vanilla`, `Responsive design`, `APIs`, `VSCode`, `GitHub`],
       image: `nucbaJSProject.png`,
       text: theme.lang.projects.gamingStore.text,
-      gitHub: `https://github.com/nataliacamilavega/gaming-store`,
+      gitHub: `https://github.com/nataliavega98/gaming-store`,
       link: `https://gamingstore-bynatalia.vercel.app/`,
       comment: theme.lang.projects.gamingStore.comment,
     },
@@ -142,7 +157,7 @@ const Projects = () => {
       title: theme.lang.projects.limsa.title,
       subtitle: theme.lang.projects.limsa.subtitle,
       date: theme.lang.projects.limsa.date,
-      filterTag: [{ name: theme.lang.projects.ac1it1, color: "lightPink" }],
+      filterTag: [{ name: theme.lang.projects.ac1it1, color: 'lightPink' }],
       skillsTag: [
         `Prototipado`,
         `Responsive Design`,
@@ -165,7 +180,7 @@ const Projects = () => {
       title: theme.lang.projects.hbomax.title,
       subtitle: theme.lang.projects.hbomax.subtitle,
       date: theme.lang.projects.hbomax.date,
-      filterTag: [{ name: theme.lang.projects.ac1it1, color: "lightPink" }],
+      filterTag: [{ name: theme.lang.projects.ac1it1, color: 'lightPink' }],
       skillsTag: [
         `Prototipado`,
         `Responsive Design`,
@@ -188,8 +203,8 @@ const Projects = () => {
       subtitle: theme.lang.projects.gina.subtitle,
       date: theme.lang.projects.gina.date,
       filterTag: [
-        { name: theme.lang.projects.ac1it1, color: "lightPink" },
-        { name: theme.lang.projects.ac1it2, color: "lightPurple" },
+        { name: theme.lang.projects.ac1it1, color: 'lightPink' },
+        { name: theme.lang.projects.ac1it2, color: 'lightPurple' },
       ],
       skillsTag: [
         `Prototipado`,
@@ -212,7 +227,7 @@ const Projects = () => {
       title: theme.lang.projects.vf.title,
       subtitle: theme.lang.projects.vf.subtitle,
       date: theme.lang.projects.vf.date,
-      filterTag: [{ name: theme.lang.projects.ac1it1, color: "lightPink" }],
+      filterTag: [{ name: theme.lang.projects.ac1it1, color: 'lightPink' }],
       skillsTag: [
         `Prototipado`,
         `Responsive Design`,
@@ -234,15 +249,8 @@ const Projects = () => {
       title: theme.lang.projects.nereidas.title,
       subtitle: theme.lang.projects.nereidas.subtitle,
       date: theme.lang.projects.nereidas.date,
-      filterTag: [{ name: theme.lang.projects.ac1it2, color: "lightPurple" }],
-      skillsTag: [
-        `HTML5`,
-        `CSS3`,
-        `Diseño web`,
-        `Responsive design`,
-        `Maquetado`,
-        `VSCode`,
-      ],
+      filterTag: [{ name: theme.lang.projects.ac1it2, color: 'lightPurple' }],
+      skillsTag: [`HTML5`, `CSS3`, `Diseño web`, `Responsive design`, `Maquetado`, `VSCode`],
       image: `nucbaDWebProject.png`,
       text: theme.lang.projects.nereidas.text,
       link: `https://nereidas-cruceros.vercel.app/`,
@@ -254,7 +262,7 @@ const Projects = () => {
       title: theme.lang.projects.share.title,
       subtitle: theme.lang.projects.share.subtitle,
       date: theme.lang.projects.share.date,
-      filterTag: [{ name: theme.lang.projects.ac1it1, color: "lightPink" }],
+      filterTag: [{ name: theme.lang.projects.ac1it1, color: 'lightPink' }],
       skillsTag: [
         `Prototipado`,
         `Figma`,
@@ -271,51 +279,54 @@ const Projects = () => {
       behance: `https://www.behance.net/gallery/142527049/Share-Natalia-Vega`,
       comment: theme.lang.projects.share.comment,
     },
-  ];
-  const [filterSelected, setFilterSelected] = useState(`all`);
+  ]
+  const [filterSelected, setFilterSelected] = useState(`all`)
   const renderFilters = filters.map((item, index) => (
     <FilterItem
-      filterType={item.filterType}
-      filter={item.filter}
-      setterFilter={setFilterSelected}
-      filterSelected={filterSelected}
       key={item.filterType + index}
-    ></FilterItem>
-  ));
+      filter={item.filter}
+      filterSelected={filterSelected}
+      filterType={item.filterType}
+      setterFilter={setFilterSelected}
+    />
+  ))
+
   function renderProjects(colection) {
     return colection.map((item, index) => (
       <ProjectItem
-        title={item.title}
-        subtitle={item.subtitle}
+        key={item.title + index}
+        behance={item.behance}
+        comment={item.comment}
         date={item.date}
         filterTag={item.filterTag}
-        skillsTag={item.skillsTag}
-        image={item.image}
-        skillsP={theme.lang.projects.skillsP}
-        text={item.text}
-        behance={item.behance}
         gitHub={item.gitHub}
-        link={item.link}
         id={item.id}
-        comment={item.comment}
-        key={item.title + index}
-      ></ProjectItem>
-    ));
+        image={item.image}
+        link={item.link}
+        skillsP={theme.lang.projects.skillsP}
+        skillsTag={item.skillsTag}
+        subtitle={item.subtitle}
+        text={item.text}
+        title={item.title}
+      />
+    ))
   }
 
   const filteredProjects = () => {
     if (filterSelected === `all`) {
-      return renderProjects(projectsCollection);
+      return renderProjects(projectsCollection)
     } else {
       const filterProjects = projectsCollection.filter((project) => {
         return (
           project.filterTag.some((e) => e.name === filterSelected) ||
           project.skillsTag.some((e) => e === filterSelected)
-        );
-      });
-      return renderProjects(filterProjects);
+        )
+      })
+
+      return renderProjects(filterProjects)
     }
-  };
+  }
+
   return (
     <Container>
       <H2>{theme.lang.projects.h2}</H2>
@@ -325,7 +336,7 @@ const Projects = () => {
       </FilterContainer>
       <ProjectsContainer>{filteredProjects()}</ProjectsContainer>
     </Container>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

@@ -1,15 +1,13 @@
-// React
-import React, { useState } from "react";
+import { useState } from 'react'
+import styled, { useTheme } from 'styled-components'
 
-// Style
-import styled, { useTheme } from "styled-components";
-import StudyDisplay from "./StudyDisplay";
-import StudyItem from "./StudyItem";
+import StudyDisplay from './StudyDisplay'
+import StudyItem from './StudyItem'
 
 const Studys = () => {
   // Para cambiar el idioma y usar el theme fuera de styled components
-  const theme = useTheme();
-  
+  const theme = useTheme()
+
   const studyCollection = [
     //IFTS
     {
@@ -103,7 +101,7 @@ const Studys = () => {
       finishDate: theme.lang.studys.bachiller.finishDate,
       startDate: theme.lang.studys.bachiller.startDate,
     },
-  ];
+  ]
   const Container = styled.section`
     width: 100%;
     padding-top: 92px;
@@ -115,8 +113,7 @@ const Studys = () => {
     @media (max-width: 960px) {
       padding-top: 56px;
     }
-    
-  `;
+  `
   const StudyDisplayContainer = styled.div`
     display: flex;
     gap: 16px;
@@ -126,14 +123,14 @@ const Studys = () => {
       width: 100%;
       justify-content: center;
     }
-  `;
+  `
   const H2 = styled.h2`
-    font-family: "Convergence";
+    font-family: 'Convergence';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     color: ${(propsTheme) => propsTheme.theme.mode.colors.yellow};
-  `;
+  `
   const StudysContainer = styled.article`
     display: flex;
     flex-direction: column;
@@ -142,49 +139,48 @@ const Studys = () => {
     @media (max-width: 960px) {
       width: 100%;
     }
-  `;
-  const [studySelected, setStudySelected] = useState();
+  `
+  const [studySelected, setStudySelected] = useState()
   const renderStudys = studyCollection.map((study, index) => (
     <StudyItem
       key={study.degree + index}
+      credential={study.credential}
+      degree={study.degree}
+      finishDate={study.finishDate}
+      grade={study.grade}
+      gradeP={theme.lang.studys.gradeP}
+      link={study.link}
+      project={study.project}
       school={study.school}
       schoolLogo={study.schoolLogo}
-      degree={study.degree}
-      grade={study.grade}
-      credential={study.credential}
-      project={study.project}
-      link={study.link}
-      finishDate={study.finishDate}
-      startDate={study.startDate}
       setterStudySelected={setStudySelected}
+      startDate={study.startDate}
       studySelected={studySelected}
-      gradeP={theme.lang.studys.gradeP}
-
-    ></StudyItem>
-  ));
+    />
+  ))
 
   const findStudySelected = studyCollection.find((study) => {
-    if (studySelected && studySelected === study.degree) return study;
-  });
+    if (studySelected && studySelected === study.degree) return study
+  })
 
   return (
     <Container>
-       <H2>{theme.lang.studys.h2}</H2>
+      <H2>{theme.lang.studys.h2}</H2>
       <StudyDisplayContainer>
         <StudysContainer>{renderStudys}</StudysContainer>
         {findStudySelected && (
           <StudyDisplay
+            certificateP={theme.lang.studys.certificateP}
+            gotoP={theme.lang.studys.gotoP}
             infoStudySelected={findStudySelected}
+            projectP={theme.lang.studys.projectP}
             setterStudySelected={setStudySelected}
             studySelected={studySelected}
-            certificateP={theme.lang.studys.certificateP}
-            projectP={theme.lang.studys.projectP}
-            gotoP={theme.lang.studys.gotoP}
-          ></StudyDisplay>
+          />
         )}
       </StudyDisplayContainer>
     </Container>
-  );
-};
+  )
+}
 
-export default Studys;
+export default Studys

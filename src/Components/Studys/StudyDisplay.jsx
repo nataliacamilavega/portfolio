@@ -1,9 +1,5 @@
-// React
-import React from "react";
-
-// Style
-import styled from "styled-components";
-import { MdOutlineClose } from "react-icons/md";
+import styled from 'styled-components'
+import { MdOutlineClose } from 'react-icons/md'
 const StudyDisplay = ({
   infoStudySelected,
   setterStudySelected,
@@ -13,7 +9,7 @@ const StudyDisplay = ({
 }) => {
   const Container = styled.article`
     background: ${(props) => props.theme.mode.colors.bgNavBar};
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -26,7 +22,9 @@ const StudyDisplay = ({
     position: fixed;
     right: 72px;
     border-radius: 16px;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15), 1px 4px 4px rgba(0, 0, 0, 0.2);
+    box-shadow:
+      1px 1px 6px rgba(0, 0, 0, 0.15),
+      1px 4px 4px rgba(0, 0, 0, 0.2);
     padding: 24px;
     max-width: 400px;
     & p {
@@ -46,7 +44,7 @@ const StudyDisplay = ({
       height: fit-content;
       width: 90%;
     }
-  `;
+  `
   const Div = styled.div`
     display: flex;
     flex-direction: column;
@@ -63,7 +61,8 @@ const StudyDisplay = ({
         width: 240px;
       }
     }
-  `;
+  `
+
   return (
     <Container>
       <div
@@ -79,22 +78,22 @@ const StudyDisplay = ({
       <Div>
         <p>{certificateP}</p>
         <img
-          src={`assets/` + infoStudySelected.credential}
           alt={`certificado de` + infoStudySelected.degree}
+          src={`assets/certificates/` + infoStudySelected.credential}
         />
       </Div>
       <Div>
         <p>{projectP}</p>
-        <img src={`assets/` + infoStudySelected.project} alt="Proyecto" />
+        <img alt="Proyecto" src={`assets/project-cover/` + infoStudySelected.project} />
         <p>
           {gotoP}:
-          <a href={infoStudySelected.link} target="_blank">
+          <a href={infoStudySelected.link} rel="noreferrer" target="_blank">
             {infoStudySelected.link}
           </a>
         </p>
       </Div>
     </Container>
-  );
-};
+  )
+}
 
-export default StudyDisplay;
+export default StudyDisplay

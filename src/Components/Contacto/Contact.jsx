@@ -1,12 +1,9 @@
-// React imports
-import React from "react";
-
-import SocialMediaItem from "./SocialMediaItem";
-// Style
 import styled, { useTheme } from "styled-components";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { ImBehance2 } from "react-icons/im";
-import { IoMail } from "react-icons/io5";
+import { IoMail, IoLogoGitlab } from "react-icons/io5";
+
+import SocialMediaItem from "./SocialMediaItem";
 const Contact = () => {
   // Para cambiar el idioma y usar el theme fuera de styled components
   const theme = useTheme();
@@ -65,15 +62,19 @@ const Contact = () => {
     display: flex;
     flex-flow: row wrap;
     align-self: center;
-    justify-content: center;
+    justify-content: justify-between;
     gap: 16px;
-    width: 660px;
+    max-width: 480px;
     @media (max-width: 960px) {
       width: 100%;
     }
   `;
   const socialMediaCollection = [
-    // Linkedin
+    {
+      scname: `nataliacamilavega`,
+      icon: <BsGithub />,
+      link: `https://github.com/nataliacamilavega`,
+    },
     {
       scname: `Natalia Camila Vega`,
       icon: <BsLinkedin />,
@@ -81,28 +82,31 @@ const Contact = () => {
     },
     {
       scname: `nataliacamilavega`,
-      icon: <BsGithub />,
-      link: `https://github.com/nataliacamilavega`,
+      icon: <IoLogoGitlab />,
+      link: `https://gitlab.com/nataliacamilavega`,
     },
+    // Linkedin
+    {
+      scname: `nataliacamilav@gmail.com`,
+      icon: <IoMail />,
+      link: `nataliacamilav@gmail.com`,
+    },
+
     {
       scname: `nataliavega98`,
       icon: <ImBehance2 />,
       link: `https://www.behance.net/nataliavega98`,
     },
-    {
-      scname: `natalia.camila@hotmail.com`,
-      icon: <IoMail />,
-      link: `natalia.camila@hotmail.com`,
-    },
   ];
   const renderSocialMedia = socialMediaCollection.map((item, index) => (
     <SocialMediaItem
-      icon={item.icon}
-      scname={item.scname}
-      link={item.link}
       key={item.scname + index}
-    ></SocialMediaItem>
+      icon={item.icon}
+      link={item.link}
+      scname={item.scname}
+    />
   ));
+
   return (
     <Container>
       <ContactTextContainer>
@@ -112,7 +116,7 @@ const Contact = () => {
         <SocialMediaContainer>{renderSocialMedia}</SocialMediaContainer>
       </ContactTextContainer>
 
-      <img src="assets/avatar.gif" alt="" className="avatarImg" />
+      <img alt="" className="avatarImg" src="assets/custom/avatar.gif" />
     </Container>
   );
 };

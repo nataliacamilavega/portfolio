@@ -1,9 +1,7 @@
-// React imports
-import React, { useEffect } from "react";
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 // Style
-import styled, {useTheme} from "styled-components";
+import styled, { useTheme } from 'styled-components'
 // iconos
 import {
   MdInfoOutline,
@@ -12,23 +10,17 @@ import {
   MdOutlinePsychology,
   MdOutlineSchool,
   MdOutlineContactSupport,
-} from "react-icons/md";
-import { CgClose, CgMenu } from "react-icons/cg";
-import ButtonNav from "../Buttons/ButtonNav/ButtonNav";
-import SwitchMode from "../Buttons/ButtonNav/switchMode";
-import DropDown from "../Dropdown/DropDown";
+} from 'react-icons/md'
+import { CgClose, CgMenu } from 'react-icons/cg'
 
-const NavBar = ({
-  setterText,
-  setterTitle,
-  setterModal,
-  openModal,
-  setterMenu,
-  openMenu,
-}) => {
-  const location = useLocation();
+import ButtonNav from '../Buttons/ButtonNav/ButtonNav'
+import SwitchMode from '../Buttons/ButtonNav/switchMode'
+import DropDown from '../Dropdown/DropDown'
 
-  const [sectionSelected, setSectionSelected] = useState(location.pathname);
+const NavBar = ({ setterText, setterTitle, setterModal, openModal, setterMenu, openMenu }) => {
+  const location = useLocation()
+
+  const [sectionSelected, setSectionSelected] = useState(location.pathname)
 
   const Nav = styled.nav`
     width: 100%;
@@ -42,11 +34,10 @@ const NavBar = ({
     gap: 24px;
     position: fixed;
     z-index: 3000;
-    width:calc(100% - 92px - 92px);
-    
+    width: calc(100% - 92px - 92px);
+
     @media (max-width: 1280px) {
-      width:calc(100% - 100px);
-      
+      width: calc(100% - 100px);
     }
     @media (max-width: 960px) {
       width: ${openMenu ? `50%` : `56px`};
@@ -60,7 +51,7 @@ const NavBar = ({
       max-width: ${openMenu ? `calc(100% - 32px)` : `56px`};
       width: ${openMenu ? `100%` : `56px`};
     }
-  `;
+  `
   const MenuIconContainer = styled.div`
     display: none;
     @media (max-width: 960px) {
@@ -74,7 +65,7 @@ const NavBar = ({
 
       cursor: pointer;
     }
-  `;
+  `
   const ButtonNavContainer = styled.div`
     width: calc(100% - 60px);
     width: 100%;
@@ -88,9 +79,9 @@ const NavBar = ({
       width: 100%;
       flex-direction: column;
     }
-  `;
+  `
   // Para cambiar el idioma y usar el theme fuera de styled components
-  const theme = useTheme();
+  const theme = useTheme()
   // Array de objetos de botones
   const buttonsNav = [
     {
@@ -101,81 +92,78 @@ const NavBar = ({
       id: `aboutme`,
     },
     {
-      bgColor: "Yellow",
+      bgColor: 'Yellow',
       text: theme.lang.navBar.p2,
       icon: <MdOutlineSchool />,
       link: `/studys`,
       id: `studys`,
     },
     {
-      bgColor: "Green",
+      bgColor: 'Green',
       text: theme.lang.navBar.p3,
       icon: <MdOutlinePsychology />,
       link: `/habilities`,
       id: `habilities`,
     },
     {
-      bgColor: "Blue",
+      bgColor: 'Blue',
       text: theme.lang.navBar.p4,
       icon: <MdOutlineFolderSpecial />,
       link: `/projects`,
       id: `projects`,
     },
     {
-      bgColor: "Pink",
+      bgColor: 'Pink',
       text: theme.lang.navBar.p5,
       icon: <MdOutlineContactSupport />,
       link: `/contact`,
       id: `contact`,
     },
     {
-      bgColor: "Pink",
+      bgColor: 'Pink',
       text: theme.lang.navBar.p6,
       icon: <MdOutlineFileDownload />,
-      href: "cv.pdf",
+      href: 'cv.pdf',
       id: `resume`,
       titleDialog: theme.lang.modal.title,
       textDialog: theme.lang.modal.text,
       dialog: `true`,
     },
-  ];
+  ]
   // Renderizado de botones
   const renderButtons = buttonsNav.map((button, index) => (
     <ButtonNav
-      bgColor={button.bgColor}
-      text={button.text}
-      icon={button.icon}
       key={`ButtonNav` + index}
-      link={button.link}
-      id={button.id}
+      bgColor={button.bgColor}
       dialog={button.dialog}
+      icon={button.icon}
+      id={button.id}
+      link={button.link}
+      openModal={openModal}
       sectionSelected={sectionSelected}
+      setterMenu={setterMenu}
+      setterModal={setterModal}
+      setterSection={setSectionSelected}
       setterTextDialog={setterText}
       setterTitleDialog={setterTitle}
-      setterSection={setSectionSelected}
-      setterModal={setterModal}
-      openModal={openModal}
-      titleDialog={button.titleDialog}
-      textDialog={button.textDialog}
-      setterMenu={setterMenu}
       stateMenu={openMenu}
-    ></ButtonNav>
-  ));
+      text={button.text}
+      textDialog={button.textDialog}
+      titleDialog={button.titleDialog}
+    />
+  ))
 
   return (
     <Nav>
-      <MenuIconContainer
-        className="closeMenu"
-        onClick={() => setterMenu(!openMenu)}
-      >
+      <MenuIconContainer className="closeMenu" onClick={() => setterMenu(!openMenu)}>
         {openMenu ? <CgClose /> : <CgMenu />}
       </MenuIconContainer>
       <ButtonNavContainer>{renderButtons}</ButtonNavContainer>
       {/* Cambiar width calc(100% - 60px) en ButtonNavContainer */}
-      <SwitchMode stateMenu={openMenu}></SwitchMode>
-      <DropDown stateMenu={openMenu}></DropDown>
+      <SwitchMode stateMenu={openMenu} />
+      <DropDown stateMenu={openMenu} />
     </Nav>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

@@ -1,9 +1,7 @@
-// React imports
-import React from "react";
-import { Link } from "react-router-dom";
-import Theme from "../../Theme/Theme";
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
 // Style
-import styled from "styled-components";
 
 const ButtonNav = ({
   text,
@@ -21,7 +19,6 @@ const ButtonNav = ({
   setterTextDialog,
   setterMenu,
   stateMenu,
-
 }) => {
   const ButtonNav = styled.button`
     display: flex;
@@ -33,7 +30,7 @@ const ButtonNav = ({
     width: 100%;
     height: 100%;
     white-space: nowrap;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -48,58 +45,59 @@ const ButtonNav = ({
     background-color: ${(props) => props.theme.mode.colors.bgNavBar};
 
     &:hover {
-      background-color: ${(propsTheme) =>
-        propsTheme.theme.mode.colors.lightGrey};
+      background-color: ${(propsTheme) => propsTheme.theme.mode.colors.lightGrey};
     }
 
     &.selected {
       color: ${(props) => props.theme.mode.colors[`darker` + bgColor]};
-      background-color: ${(propsTheme) =>
-        propsTheme.theme.mode.colors[`light` + bgColor]};
+      background-color: ${(propsTheme) => propsTheme.theme.mode.colors[`light` + bgColor]};
     }
-  `;
+  `
   const LinkButton = styled.div`
     textdecoration: none;
 
     width: 100%;
     height: 52px;
-  `;
+  `
   const onClickFx = () => {
-    link && setterSection(link);
+    link && setterSection(link)
     if (window.innerWidth < 960) {
-      setterMenu(!stateMenu);
+      setterMenu(!stateMenu)
     }
     const dialogSetter = () => {
-      setterModal(!openModal);
-      setterTitleDialog(titleDialog);
-      setterTextDialog(textDialog);
-    };
-    dialog && dialogSetter();
-  };
+      setterModal(!openModal)
+      setterTitleDialog(titleDialog)
+      setterTextDialog(textDialog)
+    }
+
+    dialog && dialogSetter()
+  }
   const changeState = () => {
     if (link) {
-      return sectionSelected === link ? `selected` : ``;
+      return sectionSelected === link ? `selected` : ``
     }
-    return;
-  };
+
+    return
+  }
+
   return (
     <LinkButton>
       <Link
-        to={link}
         style={{
           textDecoration: `none`,
 
           width: `100%`,
           height: `100%`,
         }}
+        to={link}
       >
-        <ButtonNav onClick={() => onClickFx()} className={changeState()}>
+        <ButtonNav className={changeState()} onClick={() => onClickFx()}>
           {icon}
           <p>{text}</p>
         </ButtonNav>
       </Link>
     </LinkButton>
-  );
-};
+  )
+}
 
-export default ButtonNav;
+export default ButtonNav
