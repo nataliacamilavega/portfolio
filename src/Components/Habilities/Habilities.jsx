@@ -1,14 +1,14 @@
 // React imports
-import React from 'react'
-import styled, { useTheme } from 'styled-components'
-import { BsStars } from 'react-icons/bs'
+import React from "react";
+import styled, { useTheme } from "styled-components";
+import { BsStars } from "react-icons/bs";
 
-import TecnicalItem from './TecnicalItem'
-import SoftItem from './SoftItem'
+import TecnicalItem from "./TecnicalItem";
+import SoftItem from "./SoftItem";
 // Style
 const Habilities = () => {
   // Para cambiar el idioma y usar el theme fuera de styled components
-  const theme = useTheme()
+  const theme = useTheme();
   const Container = styled.section`
     width: 100%;
     padding-top: 92px;
@@ -19,14 +19,14 @@ const Habilities = () => {
     @media (max-width: 960px) {
       padding-top: 56px;
     }
-  `
+  `;
   const H2 = styled.h2`
-    font-family: 'Convergence';
+    font-family: "Convergence";
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     color: ${(propsTheme) => propsTheme.theme.mode.colors.green};
-  `
+  `;
   const ContainerTecnical = styled.div`
     align-self: center;
     display: flex;
@@ -34,14 +34,14 @@ const Habilities = () => {
     gap: 24px;
     max-width: 700px;
     justify-content: center;
-  `
+  `;
   const ContainerSoft = styled.div`
     display: flex;
     flex-flow: row wrap;
     row-gap: 24px;
     column-gap: 52px;
     max-width: calc(700px + 32px);
-  `
+  `;
   const tecnicalH = [
     // HTML
     {
@@ -123,6 +123,31 @@ const Habilities = () => {
       thname: `xCode`,
       icon: `xCodeIcon.svg`,
     },
+    // node JS
+    {
+      thname: `Node JS`,
+      icon: `nodejs.svg`,
+    },
+    // Express
+    {
+      thname: `Express JS`,
+      icon: `expressjs.svg`,
+    },
+    // MySQL
+    {
+      thname: `MySQL`,
+      icon: `mysql.svg`,
+    },
+    // JWT
+    {
+      thname: `JWT`,
+      icon: `jwt.svg`,
+    },
+    // Postman
+    {
+      thname: `Postman`,
+      icon: `postman.svg`,
+    },
     // github
     {
       thname: `github`,
@@ -138,6 +163,7 @@ const Habilities = () => {
       thname: `git`,
       icon: `gitIcon.svg`,
     },
+
     // Figma
     {
       thname: `Figma`,
@@ -163,7 +189,7 @@ const Habilities = () => {
       thname: `photoshop`,
       icon: `photoshopIcon.svg`,
     },
-  ]
+  ];
   const softH = [
     {
       thname: theme.lang.skills.soft.s1,
@@ -209,14 +235,18 @@ const Habilities = () => {
       thname: theme.lang.skills.soft.s11,
       icon: <BsStars />,
     },
-  ]
+  ];
 
   const renderTecnicalH = tecnicalH.map((item, index) => (
-    <TecnicalItem key={item.thname + index} icon={item.icon} thname={item.thname} />
-  ))
+    <TecnicalItem
+      key={item.thname + index}
+      icon={item.icon}
+      thname={item.thname}
+    />
+  ));
   const renderSoftH = softH.map((item, index) => (
     <SoftItem key={item.thname + index} thname={item.thname} />
-  ))
+  ));
 
   return (
     <Container>
@@ -225,7 +255,7 @@ const Habilities = () => {
       <H2>{theme.lang.skills.softP}</H2>
       <ContainerSoft>{renderSoftH}</ContainerSoft>
     </Container>
-  )
-}
+  );
+};
 
-export default Habilities
+export default Habilities;

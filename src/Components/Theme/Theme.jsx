@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import { ThemeProvider } from 'styled-components'
-import styled from 'styled-components'
+import React, { useState, useEffect } from "react";
+import { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 
 //#Componentes AboutMe
 const P = styled.p`
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   text-align: justify;
-`
+`;
 const Span = styled.span`
   color: ${(propsTheme) => propsTheme.theme.mode.colors.purple};
   font-weight: 500;
-`
+`;
 
 //Temas
 const light = {
@@ -88,13 +88,13 @@ const light = {
     text1: `#653939`,
     text2: `#bc6a69`,
   },
-  fonts: ['sans-serif', 'Roboto'],
+  fonts: ["sans-serif", "Roboto"],
   fontSizes: {
-    small: '1em',
-    medium: '2em',
-    large: '3em',
+    small: "1em",
+    medium: "2em",
+    large: "3em",
   },
-}
+};
 const dark = {
   colors: {
     // Background
@@ -165,13 +165,13 @@ const dark = {
     text1: `#f9ebff`,
     text2: `#f1bbff`,
   },
-  fonts: ['sans-serif', 'Roboto'],
+  fonts: ["sans-serif", "Roboto"],
   fontSizes: {
-    small: '1em',
-    medium: '2em',
-    large: '3em',
+    small: "1em",
+    medium: "2em",
+    large: "3em",
   },
-}
+};
 
 // Idiomas
 const ES = {
@@ -187,32 +187,36 @@ const ES = {
     h2: `Sobre Mi`,
     p1: (
       <P>
-        Soy una persona <Span>creativa</Span>, <Span>entusiasta</Span> y <Span>responsable</Span>.
-        Actualmente, estoy cursando una <Span>tecnicatura superior en desarrollo de software</Span>,
-        lo que me permite seguir ampliando mis conocimientos y crecer en mi carrera.
+        Soy una persona <Span>creativa</Span>, <Span>entusiasta</Span> y{" "}
+        <Span>responsable</Span>. Actualmente, estoy cursando una{" "}
+        <Span>tecnicatura superior en desarrollo de software</Span>, lo que me
+        permite seguir ampliando mis conocimientos y crecer en mi carrera.
       </P>
     ),
     p2: (
       <P>
-        Comencé mi carrera en <Span>2022</Span> estudiando <Span>diseño UX/UI</Span> y realizando{' '}
-        proyectos freelance. Luego, me especialicé en <Span>desarrollo web</Span> con{' '}
-        <Span>React JS</Span>, <Span>Next.js</Span>, <Span>JavaScript</Span> y{' '}
-        <Span>TypeScript</Span>.
+        Comencé mi carrera en <Span>2022</Span> estudiando{" "}
+        <Span>diseño UX/UI</Span> y realizando proyectos freelance. Luego, me
+        especialicé en <Span>desarrollo web</Span> con <Span>React JS</Span>,{" "}
+        <Span>Next.js</Span>, <Span>JavaScript</Span> y <Span>TypeScript</Span>.
       </P>
     ),
     p3: (
       <P>
-        Desde <Span>julio de 2023</Span>, trabajé como <Span>desarrolladora frontend</Span>,
-        enfocándome en páginas web y sistemas de gestión. En <Span>febrero de 2024</Span>, amplié mi
-        enfoque al <Span>desarrollo mobile</Span>, creando aplicaciones para <Span>iOS</Span> y{' '}
-        <Span>Android</Span> con <Span>React Native</Span>, integrando mis conocimientos de{' '}
-        <Span>frontend</Span> y <Span>UX/UI</Span>.
+        Desde <Span>julio de 2023</Span>, trabajé como{" "}
+        <Span>desarrolladora frontend</Span>, enfocándome en páginas web y
+        sistemas de gestión. En <Span>febrero de 2024</Span>, amplié mi enfoque
+        al <Span>desarrollo mobile</Span>, creando aplicaciones para{" "}
+        <Span>iOS</Span> y <Span>Android</Span> con <Span>React Native</Span>,
+        integrando mis conocimientos de <Span>frontend</Span> y{" "}
+        <Span>UX/UI</Span>.
       </P>
     ),
     p4: (
       <P>
-        Disfruto <Span>trabajar en equipo</Span>, adaptándome rápidamente, con <Span>empatía</Span>{' '}
-        y <Span>comunicación clara</Span>. Soy <Span>atenta a los detalles</Span> y efectiva en{' '}
+        Disfruto <Span>trabajar en equipo</Span>, adaptándome rápidamente, con{" "}
+        <Span>empatía</Span> y <Span>comunicación clara</Span>. Soy{" "}
+        <Span>atenta a los detalles</Span> y efectiva en{" "}
         <Span>resolver problemas emergentes</Span>.
       </P>
     ),
@@ -278,7 +282,7 @@ const ES = {
     h2: `Contacto`,
     p1: `¡Muchas gracias por visitar mi portfolio!`,
     p2: ` Si te gustó mi trabajo no dudes en contactarme a través de mis redes
-    sociales.`,
+    sociales`,
   },
   modal: {
     title: `Curriculum Vitae`,
@@ -293,10 +297,40 @@ const ES = {
     according2: `Según habilidad técnica`,
     ac1it1: `Diseño UX UI`,
     ac1it2: `Desarrollo Front-End`,
+    ac1it3: `Desarrollo Back-End`,
     skillsP: `Habilidades desarrolladas`,
+    shareApp: {
+      title: `Share - Aplicación móvil`,
+      subtitle: `Desarrollo en progreso con React Native`,
+      date: `Nov. 2024 - Presente`,
+      text: [
+        `Diseño UX/UI original utilizando herramientas como Figma, Whimsical y Optimal Workshop`,
+        `Desarrollo de una aplicación móvil utilizando React Native y Expo`,
+        `Implementación de la gestión de estado con Zustand para interacciones dinámicas`,
+        `Estilado de la aplicación con Tailwind CSS y NativeWind`,
+        `Configuración y gestión de formateo y linting automatizado con ESLint y Prettier`,
+        `Desarrollo continuo alojado en GitHub, actualmente en progreso`,
+      ],
+      comment: `Proyecto en curso basado en un diseño UX/UI original y desarrollado con React Native`,
+    },
+    bookers: {
+      title: `Bookers - Proyecto de Gestión de Libros`,
+      subtitle: `Desarrollo e implementación de un proyecto backend y frontend para la universidad`,
+      date: `Oct. 2024 - Nov. 2024`,
+      text: [
+        `Desarrollo de una API REST utilizando Node.js, Express.js y MySQL`,
+        `Implementación de operaciones CRUD para libros, géneros, reseñas, banners, roles y gestión de usuarios`,
+        `Integración con una base de datos MySQL para el manejo eficiente de datos`,
+        `Desarrollo del frontend utilizando Next.js y TypeScript para una interfaz web responsiva y amigable`,
+        `Uso de Tailwind CSS y Flowbite para el estilado de componentes e inputs`,
+        `Implementación de la gestión de estado con Zustand para manejo de sesiones y actualizaciones dinámicas de datos`,
+        `Deploy de la API en Always Data y del frontend en Vercel, ambos conectados a GitHub para actualizaciones automáticas`,
+      ],
+      comment: `Proyecto académico para la entrega final de la materia de backend`,
+    },
     epsilonarEncuesta: {
       title: `EPSILONAR - Encuesta Online`,
-      subtitle: `Desarrollo e implementación del diseño propuesto por el cliente.`,
+      subtitle: `Desarrollo e implementación del diseño propuesto por el cliente`,
       date: `Ene. 2024 - Ene. 2024`,
       text: [
         `Desarrollo realizado con NextJS y TypeScript`,
@@ -308,7 +342,7 @@ const ES = {
     },
     moveFinanciera: {
       title: `MOVE - Financiera`,
-      subtitle: `Rediseño y prototipado de un sistema financiero.`,
+      subtitle: `Rediseño y prototipado de un sistema financiero`,
       date: `Ene. 2023- Abr. 2022`,
       text: [
         `Re-diseño de logo y creacion de identidad de la marca`,
@@ -319,11 +353,11 @@ const ES = {
         `Userflow`,
         `Nuevos caminos en el sistema`,
       ],
-      comment: `Proyecto freelance realizado junto a un desarrollador web full stack.`,
+      comment: `Proyecto freelance realizado junto a un desarrollador web full stack`,
     },
     beautyCosmetics: {
       title: `“Beauty Cosmetics” - E-commerce de cosméticos`,
-      subtitle: `Diseño, prototipado y desarrollo de proyecto basado en un e-commerce de cosméticos.`,
+      subtitle: `Diseño, prototipado y desarrollo de proyecto basado en un e-commerce de cosméticos`,
       date: `Sep. 2022 - Nov. 2022`,
       text: [
         `Manejo de datos en Firebase`,
@@ -337,7 +371,7 @@ const ES = {
     },
     gamingStore: {
       title: `“Gaming Store” - E-commerce de juegos`,
-      subtitle: `Diseño, prototipado y desarrollo de proyecto basado en un e-commerce de juegos.`,
+      subtitle: `Diseño, prototipado y desarrollo de proyecto basado en un e-commerce de juegos`,
       date: `Sep. 2022 - Nov. 2022`,
       text: [
         `Manejo de API y JSON local`,
@@ -349,18 +383,22 @@ const ES = {
         `HTML, CSS y JavaScript`,
         `La página web se adapta a todos los dispositivos`,
       ],
-      comment: `Proyecto integrador asociado a “JavaScript - NUCBA”.`,
+      comment: `Proyecto integrador asociado a “JavaScript - NUCBA”`,
     },
     limsa: {
       title: `“LIMSA: Limpiador de zapatillas” - Landing page`,
-      subtitle: `Creación, investigación y diseño de una landing page para comercializar un producto de limpieza da calzado.`,
+      subtitle: `Creación, investigación y diseño de una landing page para comercializar un producto de limpieza da calzado`,
       date: `Sep. 2022 - Nov. 2022`,
-      text: [`Diseño interactivo`, `Responsive design`, `Research y benchmarking`],
-      comment: `Proyecto realizado en equipo junto un diseñador UX UI y dos desarrolladores Front-End.`,
+      text: [
+        `Diseño interactivo`,
+        `Responsive design`,
+        `Research y benchmarking`,
+      ],
+      comment: `Proyecto realizado en equipo junto un diseñador UX UI y dos desarrolladores Front-End`,
     },
     hbomax: {
       title: `HBO MAX - Re-diseño de página web`,
-      subtitle: `Investigación de puntos de dolor y problemas al usar la plataforma web, propuesta de rediseño y presentación de prototipo.`,
+      subtitle: `Investigación de puntos de dolor y problemas al usar la plataforma web, propuesta de rediseño y presentación de prototipo`,
       date: `Sep. 2022 - Nov. 2022`,
       text: [
         `Elementos del UX de James Garret`,
@@ -378,18 +416,22 @@ const ES = {
         `Guia de estilos, sistema de diseño y UI Kit`,
         `Pruebas de usabilidad`,
       ],
-      comment: `Proyecto integrador asociado a “Diseño UX UI Avanzado - Coderhouse”.`,
+      comment: `Proyecto integrador asociado a “Diseño UX UI Avanzado - Coderhouse”`,
     },
     gina: {
       title: `“Gina: Una perrita muy dulce” - cuento digital interactivo`,
-      subtitle: `Diseño y desarrollo de cuento digital interactivo desarrollado en página web dónde el lector puede elegir su trayecto a través de la historia.`,
+      subtitle: `Diseño y desarrollo de cuento digital interactivo desarrollado en página web dónde el lector puede elegir su trayecto a través de la historia`,
       date: `Sep. 2022 - Nov. 2022`,
-      text: [`Diseño interactivo`, `Maquetado y desarrollo con HTML y CSS`, `Responsive design`],
-      comment: `Proyecto realizado en equipo junto a la autora de la historia.  En este trabajo ejercí el rol de Diseñadora y Desarrolladora (HTML y CSS).`,
+      text: [
+        `Diseño interactivo`,
+        `Maquetado y desarrollo con HTML y CSS`,
+        `Responsive design`,
+      ],
+      comment: `Proyecto realizado en equipo junto a la autora de la historia.  En este trabajo ejercí el rol de Diseñadora y Desarrolladora (HTML y CSS)`,
     },
     vf: {
       title: `Victoria Fernandez - Landing Page`,
-      subtitle: `Creación, investigación y diseño de una landing page para una community manager.`,
+      subtitle: `Creación, investigación y diseño de una landing page para una community manager`,
       date: `Ago. 2022 - Sep. 2022`,
       text: [
         `Investigación`,
@@ -404,11 +446,11 @@ const ES = {
         `Responsive design`,
       ],
       comment: `Proyecto realizado en equipo junto con dos desarrolladores Front-End.
-      En este trabajo ejercí el rol de Diseñadora UX UI.`,
+      En este trabajo ejercí el rol de Diseñadora UX UI`,
     },
     nereidas: {
       title: `“Nereidas Cruceros” - Landing Page`,
-      subtitle: `Creación, diseño y desarrollo de landing page.`,
+      subtitle: `Creación, diseño y desarrollo de landing page`,
       date: `Ago. 2022 - Sep. 2022`,
       text: [
         `Maquetación en HTML5 y CSS3 de un proyecto final dónde se debía representar una landing page con distintas secciones dentro de la misma página y un registro e inicio de sesión`,
@@ -419,7 +461,7 @@ const ES = {
     },
     share: {
       title: `“Share” - Aplicación móvil para android`,
-      subtitle: `Creación, investigación y diseño de una aplicación móvil.`,
+      subtitle: `Creación, investigación y diseño de una aplicación móvil`,
       date: `Feb. 2022 - May. 2022`,
       text: [
         `Diseño centrado en el usuario`,
@@ -429,17 +471,17 @@ const ES = {
         `Entrevistas cualitativas y encuestas`,
         `Arquitectura de la información y user-flow`,
         `Bocetado de wireframes, prototipado en baja fidelidad y alta fidelidad (LO-FI, HI-FI)`,
-        `Pruebas de usabilidad.`,
-        `Elaboración de UI kit y Atomic Design.`,
+        `Pruebas de usabilidad`,
+        `Elaboración de UI kit y Atomic Design`,
       ],
-      comment: `Proyecto integrador asociado a “Diseño web - NUCBA”`,
+      comment: `Proyecto integrador asociado a “Diseño UX UI - CoderHouse”`,
     },
   },
   resume: `cv_Natalia_Vega.pdf`,
   footer: {
     p1: `Página diseñada y desarrollada por Natalia Vega`,
   },
-}
+};
 const EN = {
   navBar: {
     p1: `About Me`,
@@ -453,33 +495,37 @@ const EN = {
     h2: `About Me`,
     p1: (
       <P>
-        I am a <Span>creative</Span>, <Span>enthusiastic</Span>, and <Span>responsible</Span>{' '}
-        person. Currently, I am pursuing a{' '}
-        <Span>higher technical degree in software development</Span>, which allows me to
-        continuously expand my knowledge and grow in my career.
+        I am a <Span>creative</Span>, <Span>enthusiastic</Span>, and{" "}
+        <Span>responsible</Span> person. Currently, I am pursuing a{" "}
+        <Span>higher technical degree in software development</Span>, which
+        allows me to continuously expand my knowledge and grow in my career.
       </P>
     ),
     p2: (
       <P>
-        I started my career in <Span>2022</Span> by studying <Span>UX/UI design</Span> and working
-        on freelance projects. Later, I specialized in <Span>web development</Span> using{' '}
-        <Span>React JS</Span>, <Span>Next.js</Span>, <Span>JavaScript</Span>, and{' '}
+        I started my career in <Span>2022</Span> by studying{" "}
+        <Span>UX/UI design</Span> and working on freelance projects. Later, I
+        specialized in <Span>web development</Span> using <Span>React JS</Span>,{" "}
+        <Span>Next.js</Span>, <Span>JavaScript</Span>, and{" "}
         <Span>TypeScript</Span>.
       </P>
     ),
     p3: (
       <P>
-        Since <Span>July 2023</Span>, I have worked as a <Span>frontend developer</Span>, focusing
-        on web pages and management systems. In <Span>February 2024</Span>, I expanded my focus to{' '}
-        <Span>mobile development</Span>, creating applications for <Span>iOS</Span> and{' '}
-        <Span>Android</Span> using <Span>React Native</Span>, integrating my knowledge of{' '}
+        Since <Span>July 2023</Span>, I have worked as a{" "}
+        <Span>frontend developer</Span>, focusing on web pages and management
+        systems. In <Span>February 2024</Span>, I expanded my focus to{" "}
+        <Span>mobile development</Span>, creating applications for{" "}
+        <Span>iOS</Span> and <Span>Android</Span> using{" "}
+        <Span>React Native</Span>, integrating my knowledge of{" "}
         <Span>frontend</Span> and <Span>UX/UI</Span>.
       </P>
     ),
     p4: (
       <P>
-        I enjoy <Span>working in a team</Span>, adapting quickly with <Span>empathy</Span> and{' '}
-        <Span>clear communication</Span>. I am <Span>detail-oriented</Span> and effective in{' '}
+        I enjoy <Span>working in a team</Span>, adapting quickly with{" "}
+        <Span>empathy</Span> and <Span>clear communication</Span>. I am{" "}
+        <Span>detail-oriented</Span> and effective in{" "}
         <Span>solving emerging problems</Span>.
       </P>
     ),
@@ -553,10 +599,40 @@ const EN = {
     according2: `According to technical abilities`,
     ac1it1: `UX UI Design `,
     ac1it2: `Front End Development`,
+    ac1it3: `Back End Development`,
     skillsP: `Skills developed`,
+    shareApp: {
+      title: `Share - Mobile Application`,
+      subtitle: `Developed with React Native`,
+      date: `Nov. 2024 - Present`,
+      text: [
+        `Original UX/UI design using tools like Figma, Whimsical, and Optimal Workshop`,
+        `Development of a mobile application using React Native and Expo`,
+        `Implementation of state management with Zustand for dynamic interactions`,
+        `Styling the application using Tailwind CSS and NativeWind`,
+        `Setup and management of automated formatting and linting using ESLint and Prettier`,
+        `Continuous development hosted on GitHub, currently in progress`,
+      ],
+      comment: `Ongoing project based on an original UX/UI design and developed with React Native`,
+    },
+    bookers: {
+      title: `Bookers - Book Management Project`,
+      subtitle: `Development and implementation of a backend and frontend project for the university`,
+      date: `Oct. 2024 - Nov. 2024`,
+      text: [
+        `Development of a REST API using Node.js, Express.js, and MySQL`,
+        `Implementation of CRUD operations for books, reviews, genres, roles, banners and user management`,
+        `Integration with a MySQL database for efficient data handling`,
+        `Frontend development using Next.js and TypeScript for a responsive and user-friendly web interface`,
+        `Utilized Tailwind CSS and Flowbite for styling components and inputs`,
+        `State management implemented with Zustand for session handling and dynamic data updates`,
+        `Deployment of the API on Always Data and the frontend on Vercel, both connected to GitHub for automated updates`,
+      ],
+      comment: `Academic project for the final delivery in the backend course`,
+    },
     epsilonarEncuesta: {
       title: `EPSILONAR - Online Survey`,
-      subtitle: `Development and implementation of the client's proposed design.`,
+      subtitle: `Development and implementation of the client's proposed design`,
       date: `Jan. 2024 - Jan. 2024`,
       text: [
         `Developed using NextJS and TypeScript`,
@@ -568,7 +644,7 @@ const EN = {
     },
     moveFinanciera: {
       title: `MOVE - Financial`,
-      subtitle: ` Redesign and prototyped of a finance system .`,
+      subtitle: ` Redesign and prototyped of a finance system `,
       date: `Jan. 2023- Apr. 2022`,
       text: [
         `Logo re-design and brand identit creation`,
@@ -583,7 +659,7 @@ const EN = {
     },
     beautyCosmetics: {
       title: `“Beauty Cosmetics” – Cosmetics e-commerce`,
-      subtitle: ` Design, prototyped and project development based on a cosmetics e-commerce.`,
+      subtitle: ` Design, prototyped and project development based on a cosmetics e-commerce`,
       date: `Sep. 2022 - Nov. 2022`,
       text: [
         ` Data handling in Firebase`,
@@ -597,7 +673,7 @@ const EN = {
     },
     gamingStore: {
       title: `“Gaming Store” - E-commerce of games`,
-      subtitle: ` Design, prototyped and project development based on a games e-commerce.`,
+      subtitle: ` Design, prototyped and project development based on a games e-commerce`,
       date: `Sep. 2022 - Nov. 2022`,
       text: [
         ` Local API and JSON Handling`,
@@ -609,18 +685,22 @@ const EN = {
         `HTML, CSS y JavaScript`,
         ` The website adapts to all devices`,
       ],
-      comment: ` Integrator project associated with "JavaScript - NUCBA”.`,
+      comment: ` Integrator project associated with "JavaScript - NUCBA”`,
     },
     limsa: {
       title: `“LIMSA: Shoe cleaner” - Landing page`,
-      subtitle: ` Creation, research and design of a landing page to market a shoe cleaning product.`,
+      subtitle: ` Creation, research and design of a landing page to market a shoe cleaning product`,
       date: `Sep. 2022 - Nov. 2022`,
-      text: [` Interactive design`, `Responsive design`, ` Research and benchmarking`],
-      comment: ` Project carried out as a team with a UX UI designer and two Front-End developers. In this job I performed the role of UX UI Designer. .`,
+      text: [
+        ` Interactive design`,
+        `Responsive design`,
+        ` Research and benchmarking`,
+      ],
+      comment: ` Project carried out as a team with a UX UI designer and two Front-End developers. In this job I performed the role of UX UI Designer. `,
     },
     hbomax: {
       title: ` HBO MAX - Website redesign`,
-      subtitle: ` Investigation of pain points and problems when using the web platform, redesign proposal and prototype presentation.`,
+      subtitle: ` Investigation of pain points and problems when using the web platform, redesign proposal and prototype presentation`,
       date: `Sep. 2022 - Nov. 2022`,
       text: [
         ` Elements of James Garrett's UX`,
@@ -638,22 +718,22 @@ const EN = {
         ` Style guide, design system and UI Kit`,
         ` Usability testing`,
       ],
-      comment: ` Integrative project associated with "Advanced UX UI Design - Coderhouse”.`,
+      comment: ` Integrative project associated with "Advanced UX UI Design - Coderhouse”`,
     },
     gina: {
       title: `“Gina: A very sweet dog” - interactive digital story`,
-      subtitle: ` Design and development of an interactive digital story developed on a web page where the reader can choose their path through the story.`,
+      subtitle: ` Design and development of an interactive digital story developed on a web page where the reader can choose their path through the story`,
       date: `Sep. 2022 - Nov. 2022`,
       text: [
         ` Interactive design`,
         ` Layout and development with HTML and CSS`,
         `Responsive design`,
       ],
-      comment: ` Project carried out as a team together with the author of the story. In this job I exercised the role of Designer and Developer (HTML and CSS).`,
+      comment: ` Project carried out as a team together with the author of the story. In this job I exercised the role of Designer and Developer (HTML and CSS)`,
     },
     vf: {
       title: `Victoria Fernandez - Landing Page`,
-      subtitle: ` Creation, research and design of a landing page for a community manager.`,
+      subtitle: ` Creation, research and design of a landing page for a community manager`,
       date: `Ago. 2022 - Sep. 2022`,
       text: [
         ` Research`,
@@ -671,7 +751,7 @@ const EN = {
     },
     nereidas: {
       title: ` “Nereidas Cruises” - Landing Page`,
-      subtitle: ` Creation, design and development of landing page.`,
+      subtitle: ` Creation, design and development of landing page`,
       date: `Ago. 2022 - Sep. 2022`,
       text: [
         ` Layout in HTML5 and CSS3 of a final project where a landing page should be represented with different sections within the same page and a registration and login`,
@@ -692,10 +772,10 @@ const EN = {
         ` Qualitative interviews and surveys`,
         ` Information architecture and user-flow`,
         ` Wireframe sketching, prototyping in low fidelity and high fidelity (LO-FI, HI-FI)`,
-        ` Usability tests.`,
+        ` Usability tests`,
         ` Development of UI kit and Atomic Design`,
       ],
-      comment: ` Integrative project associated with "Web Design - NUCBA" .`,
+      comment: ` Integrative project associated with "Web Design - NUCBA" `,
     },
   },
   modal: {
@@ -708,23 +788,23 @@ const EN = {
   footer: {
     p1: `Web page design and developed by Natalia Vega`,
   },
-}
+};
 
-const langs = { ES, EN }
-const themes = { light, dark }
+const langs = { ES, EN };
+const themes = { light, dark };
 
 const Theme = ({ children }) => {
-  const [themeMode, setThemeMode] = useState('light')
-  const [langSelected, setLangSelected] = useState('ES')
+  const [themeMode, setThemeMode] = useState("light");
+  const [langSelected, setLangSelected] = useState("ES");
 
   useEffect(() => {
     if (window.localStorage.getItem(`themeMode`)) {
-      setThemeMode(window.localStorage.getItem(`themeMode`))
+      setThemeMode(window.localStorage.getItem(`themeMode`));
     }
     if (window.localStorage.getItem(`localLanguage`)) {
-      setLangSelected(window.localStorage.getItem(`localLanguage`))
+      setLangSelected(window.localStorage.getItem(`localLanguage`));
     }
-  }, [])
+  }, []);
 
   return (
     <ThemeProvider
@@ -739,7 +819,7 @@ const Theme = ({ children }) => {
     >
       {children}
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default Theme
+export default Theme;
