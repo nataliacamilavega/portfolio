@@ -314,7 +314,7 @@ const ES = {
       comment: `Proyecto en curso basado en un diseño UX/UI original y desarrollado con React Native`,
     },
     bookers: {
-      title: `Bookers - Proyecto de Gestión de Libros`,
+      title: `Bookers - Proyecto de Gestión de reseñas sobre libros`,
       subtitle: `Desarrollo e implementación de un proyecto backend y frontend para la universidad`,
       date: `Oct. 2024 - Nov. 2024`,
       text: [
