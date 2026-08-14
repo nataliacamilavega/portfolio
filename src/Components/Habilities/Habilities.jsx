@@ -7,6 +7,7 @@ import { skillIcons } from "./skillIcons";
 const Habilities = () => {
   const theme = useTheme();
   const Container = styled.section`
+    position: relative;
     width: 100%;
     padding-top: 92px;
     padding-bottom: 72px;
@@ -17,21 +18,12 @@ const Habilities = () => {
       padding-top: 56px;
     }
   `;
-  const H2 = styled.h1`
-    font-family: "Convergence";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    color: ${(propsTheme) => propsTheme.theme.mode.colors.green};
-  `;
   const H3 = styled.h2`
     font-family: "Roboto";
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     width: 100%;
-    max-width: 860px;
-    align-self: center;
   `;
   const SoftTitle = styled.h2`
     font-family: "Convergence";
@@ -40,12 +32,21 @@ const Habilities = () => {
     font-size: 24px;
     color: ${(propsTheme) => propsTheme.theme.mode.colors.green};
   `;
+  const SrOnly = styled.h1`
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  `;
   const ContainerTecnical = styled.div`
-    align-self: center;
     display: flex;
     flex-flow: row wrap;
     gap: 16px 12px;
-    max-width: 860px;
     width: 100%;
     justify-content: flex-start;
   `;
@@ -53,8 +54,6 @@ const Habilities = () => {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    max-width: 860px;
-    align-self: center;
     width: 100%;
   `;
   const groups = [
@@ -127,7 +126,7 @@ const Habilities = () => {
 
   return (
     <Container>
-      <H2>{theme.lang.skills.techP}</H2>
+      <SrOnly>{theme.lang.navBar.p3}</SrOnly>
       {groups.map((group) => (
         <div key={group.title} style={{ display: `contents` }}>
           <H3>{group.title}</H3>

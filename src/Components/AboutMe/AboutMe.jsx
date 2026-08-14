@@ -18,7 +18,6 @@ const AboutMe = () => {
     flex-direction: column;
     gap: 32px;
     @media (max-width: 960px) {
-      padding: 16px;
       padding-bottom: 56px;
       padding-top: 56px;
     }
@@ -70,6 +69,8 @@ const AboutMe = () => {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    flex: 1;
+    min-width: 0;
   `;
 
   const H2 = styled.h1`

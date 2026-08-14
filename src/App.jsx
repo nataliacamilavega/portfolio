@@ -17,6 +17,25 @@ import Analytics from "./Components/Analytics/Analytics";
 const GlobalStyle = createGlobalStyle`
   html {
     background-color: ${(props) => props.theme.mode.colors.background};
+    --page-max: 1400px;
+    --page-pad: 92px;
+    --content-inset: 32px;
+    --nav-top: 32px;
+  }
+
+  @media (max-width: 1280px) {
+    html {
+      --page-pad: 32px;
+      --content-inset: 20px;
+    }
+  }
+
+  @media (max-width: 960px) {
+    html {
+      --page-pad: 16px;
+      --content-inset: 12px;
+      --nav-top: 16px;
+    }
   }
 
   :focus-visible {
@@ -73,36 +92,29 @@ const SkipLink = () => {
 };
 
 const Header = styled.header`
-  width: 100%;
+  width: min(var(--page-max), calc(100% - 2 * var(--page-pad)));
+  margin: 0 auto;
   height: fit-content;
-  padding: 0 92px;
-  padding-top: 32px;
+  padding-top: var(--nav-top);
   display: flex;
   justify-content: center;
 
-  @media (max-width: 1280px) {
-    padding: 32px 32px 0;
-  }
   @media (max-width: 960px) {
     display: block;
-    padding: 16px;
+    width: calc(100% - 2 * var(--page-pad));
   }
 `;
 
 const Main = styled.main`
-  width: 100%;
+  width: min(var(--page-max), calc(100% - 2 * var(--page-pad)));
+  margin: 0 auto;
+  padding-inline: var(--content-inset);
   min-height: 100vh;
-  padding: 0 122px;
   display: flex;
   flex-direction: column;
   gap: 72px;
-  align-items: center;
-  @media (max-width: 1280px) {
-    padding: 0 56px;
-  }
-  @media (max-width: 500px) {
-    padding: 0 24px;
-  }
+  align-items: stretch;
+  box-sizing: border-box;
 `;
 
 const App = () => {

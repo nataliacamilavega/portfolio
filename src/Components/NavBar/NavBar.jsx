@@ -15,8 +15,6 @@ import SwitchMode from "../Buttons/ButtonNav/switchMode";
 import DropDown from "../Dropdown/DropDown";
 
 const Nav = styled.nav`
-  width: 100%;
-  max-width: 1400px;
   height: 52px;
   display: flex;
   background: ${(props) => props.theme.mode.colors.bgNavBar};
@@ -26,22 +24,22 @@ const Nav = styled.nav`
   gap: 24px;
   position: fixed;
   z-index: 3000;
-  width: calc(100% - 92px - 92px);
+  top: var(--nav-top);
+  left: 0;
+  right: 0;
+  width: min(var(--page-max), calc(100% - 2 * var(--page-pad)));
+  margin-inline: auto;
 
-  @media (max-width: 1280px) {
-    width: calc(100% - 100px);
-  }
   @media (max-width: 960px) {
-    width: ${(props) => (props.$open ? `50%` : `56px`)};
+    left: var(--page-pad);
+    right: auto;
+    margin-inline: 0;
+    width: ${(props) => (props.$open ? `min(400px, calc(100% - 2 * var(--page-pad)))` : `56px`)};
     height: ${(props) => (props.$open ? `calc(100vh - 32px)` : `56px`)};
     flex-direction: column;
     border-radius: 50px;
     padding-bottom: ${(props) => (props.$open ? `52px` : `0`)};
     justify-content: ${(props) => (props.$open ? `start` : `center`)};
-  }
-  @media (max-width: 500px) {
-    max-width: ${(props) => (props.$open ? `calc(100% - 32px)` : `56px`)};
-    width: ${(props) => (props.$open ? `100%` : `56px`)};
   }
 `;
 

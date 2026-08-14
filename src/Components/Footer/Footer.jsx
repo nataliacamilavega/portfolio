@@ -13,10 +13,11 @@ const Footer = () => {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: min(var(--page-max), calc(100% - 2 * var(--page-pad)));
+    margin: 0 auto;
     min-height: 144px;
     gap: 8px;
-    padding: 32px 92px;
+    padding: 32px 24px;
     background-color: ${(props) => props.theme.mode.colors.bgNavBar};
     box-sizing: border-box;
     border-radius: 16px 16px 0 0;
