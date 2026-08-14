@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Container = styled.div`
   width: 100%;
@@ -17,21 +17,21 @@ const Container = styled.div`
       border-top: #207fb4 1px solid;
     }
   }
-`
-const H4 = styled.h4`
-  font-family: 'Roboto';
+`;
+const H4 = styled.h3`
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 16x;
-`
+  font-size: 16px;
+`;
 const FilterPContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   width: 100%;
-`
-const FilterP = styled.p`
-  font-family: 'Roboto';
+`;
+const FilterP = styled.button`
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -42,12 +42,19 @@ const FilterP = styled.p`
   padding: 8px 16px;
   width: fit-content;
   min-width: 100px;
+  min-height: 44px;
   cursor: pointer;
+  background: transparent;
+  color: inherit;
   transition: background 0.2s linear;
 
   &.selected {
     background: ${(props) => props.theme.mode.colors[props.color]};
     color: ${(props) => props.theme.mode.colors.textInverse};
+  }
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.mode.colors.text};
+    outline-offset: 2px;
   }
   @media (min-width: 700px) {
     &:hover {
@@ -56,33 +63,37 @@ const FilterP = styled.p`
       background: ${(props) => props.theme.mode.colors[props.color]};
     }
   }
-`
+`;
 
 const FilterItem = ({ filterType, filter, setterFilter, filterSelected }) => {
   const changeState = (e) => {
     if (e !== `all`) {
-      return filterSelected === e ? `selected` : ``
+      return filterSelected === e ? `selected` : ``;
     }
 
-    return
-  }
+    return;
+  };
   const renderFilter = filter.map((e, index) => (
     <FilterP
       key={e.color + index}
+      aria-pressed={filterSelected === e.name}
       className={changeState(e.name)}
       color={e.color}
-      onClick={() => (e.name === filterSelected ? setterFilter(`all`) : setterFilter(e.name))}
+      type="button"
+      onClick={() =>
+        e.name === filterSelected ? setterFilter(`all`) : setterFilter(e.name)
+      }
     >
       {e.name}
     </FilterP>
-  ))
+  ));
 
   return (
     <Container>
       <H4>{filterType}:</H4>
       <FilterPContainer>{renderFilter}</FilterPContainer>
     </Container>
-  )
-}
+  );
+};
 
-export default FilterItem
+export default FilterItem;

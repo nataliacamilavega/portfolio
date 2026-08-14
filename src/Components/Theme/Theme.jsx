@@ -26,32 +26,32 @@ const light = {
     // Pink
     darkerPink: `#653939`,
     darkPink: `#BC6A69`,
-    pink: `#FB8B8C`,
+    pink: `#653939`,
     lightPink: `#FFDAD9`,
 
     // Yellow
     darkerYellow: `#65580a`,
     darkYellow: `#EED500`,
-    yellow: `#FFD600`,
+    yellow: `#65580a`,
     lightYellow: `#FFF3B4`,
     lighterYellow: `#F9F8EE`,
 
     // Purple
     darkerPurple: `#583376`,
     darkPurple: `#DFB6FF`,
-    purple: `#E544FF`,
+    purple: `#583376`,
     lightPurple: `#FAD9FF`,
 
     // Blue
     darkerBlue: `#1d5181`,
     darkBlue: ``,
-    blue: `#47A6FF`,
+    blue: `#1d5181`,
     lightBlue: `#C6F1FF`,
 
     // Green
     darkerGreen: `#1d550f`,
     darkGreen: ``,
-    green: `#2EE400`,
+    green: `#1d550f`,
     lightGreen: `#A9FF94`,
 
     // Grey
@@ -72,12 +72,11 @@ const light = {
   switchStyle: {
     contenedorBgC: `#87C6FF`,
     contenedorJC: `flex-start`,
-    bgURL: `../../assets/custom/whiteClouds.svg`,
+    bgURL: `/assets/custom/whiteClouds.svg`,
     msColor: `#ffc187`,
     msBS: `-3.9px 6.5px 5.2px rgba(183, 183, 183, 0.35),
     0px 0px 11.7px rgba(255, 193, 135, 0.6), inset 0px -2.6px 5.2px #ffa149,
-    inset 0px 2.6px 5.2px #ffd0a5;
-  clip-path: circle(50% at 50% 50%);`,
+    inset 0px 2.6px 5.2px #ffd0a5`,
     msAfterP: `relative`,
   },
   filterInvert: `invert(0)`,
@@ -151,10 +150,10 @@ const dark = {
   switchStyle: {
     contenedorBgC: `#1F2533`,
     contenedorJC: `flex-end`,
-    bgURL: `../../assets/custom/whiteStars.svg`,
+    bgURL: `/assets/custom/whiteStars.svg`,
     msColor: `#ffffff`,
     msBS: `-3.9px 0px 19.5px rgba(183, 183, 183, 0.31),
-    inset 0px -2.6px 5.2px #ffffff, inset 0px 2.6px 5.2px #bfbfc0;`,
+    inset 0px -2.6px 5.2px #ffffff, inset 0px 2.6px 5.2px #bfbfc0`,
     msAfterP: `absolute`,
   },
   filterInvert: `invert(1)`,
@@ -181,43 +180,51 @@ const ES = {
     p3: `Habilidades`,
     p4: `Proyectos`,
     p5: `Contacto`,
-    p6: `Curriculum`,
+    p6: `Freelance`,
+    menuOpen: `Cerrar menú`,
+    menuClose: `Abrir menú`,
+    themeDark: `Activar modo oscuro`,
+    themeLight: `Activar modo claro`,
+    closeStudy: `Cerrar detalle de estudio`,
+    skip: `Saltar al contenido`,
   },
   aboutMe: {
     h2: `Sobre Mi`,
     p1: (
       <P>
-        Soy una persona <Span>creativa</Span>, <Span>entusiasta</Span> y{" "}
-        <Span>responsable</Span>. Actualmente, estoy cursando una{" "}
-        <Span>tecnicatura superior en desarrollo de software</Span>, lo que me
-        permite seguir ampliando mis conocimientos y crecer en mi carrera.
+        Soy <Span>Técnica Superior en Desarrollo de Software</Span> por el
+        I.F.T.S. Nº 24 (marzo 2023 – julio 2026). Estoy especializada en{" "}
+        <Span>Frontend web y mobile</Span>, con base en{" "}
+        <Span>diseño UX/UI</Span> y visión de producto. Me gusta involucrarme
+        desde las definiciones de negocio y experiencia de usuario hasta el
+        desarrollo que conecta frontend y backend.
       </P>
     ),
     p2: (
       <P>
-        Comencé mi carrera en <Span>2022</Span> estudiando{" "}
-        <Span>diseño UX/UI</Span> y realizando proyectos freelance. Luego, me
-        especialicé en <Span>desarrollo web</Span> con <Span>React JS</Span>,{" "}
-        <Span>Next.js</Span>, <Span>JavaScript</Span> y <Span>TypeScript</Span>.
+        Desde <Span>junio de 2023</Span> formo parte de <Span>SportClub</Span>:
+        empecé con landings y sistemas de gestión; desde{" "}
+        <Span>febrero de 2024</Span> mi rol principal es la aplicación de socios
+        en <Span>iOS</Span> y <Span>Android</Span> con <Span>React Native</Span>
+        , <Span>Expo</Span> y <Span>TypeScript</Span>, y sigo en backoffices,
+        CMS y landings de producto con <Span>Next.js</Span> y{" "}
+        <Span>Tailwind</Span>.
       </P>
     ),
     p3: (
       <P>
-        Desde <Span>julio de 2023</Span>, trabajé como{" "}
-        <Span>desarrolladora frontend</Span>, enfocándome en páginas web y
-        sistemas de gestión. En <Span>febrero de 2024</Span>, amplié mi enfoque
-        al <Span>desarrollo mobile</Span>, creando aplicaciones para{" "}
-        <Span>iOS</Span> y <Span>Android</Span> con <Span>React Native</Span>,
-        integrando mis conocimientos de <Span>frontend</Span> y{" "}
-        <Span>UX/UI</Span>.
+        En paralelo trabajo como <Span>freelance</Span>: sitios y landings con{" "}
+        <Span>React</Span>, <Span>Next.js</Span>, <Span>Vite</Span>,{" "}
+        <Span>TypeScript</Span> y <Span>Tailwind</Span>. Trabajo con el cliente
+        y el diseñador, cuando hay: requerimientos, SEO, dominio, hosting y
+        deploy. Los trabajos publicados están en la sección Freelance.
       </P>
     ),
     p4: (
       <P>
-        Disfruto <Span>trabajar en equipo</Span>, adaptándome rápidamente, con{" "}
-        <Span>empatía</Span> y <Span>comunicación clara</Span>. Soy{" "}
-        <Span>atenta a los detalles</Span> y efectiva en{" "}
-        <Span>resolver problemas emergentes</Span>.
+        Disfruto <Span>trabajar en equipo</Span>, interpretar Figma, alinear
+        usabilidad y resolver edge cases. Soy <Span>atenta a los detalles</Span>{" "}
+        y efectiva resolviendo problemas.
       </P>
     ),
   },
@@ -227,11 +234,22 @@ const ES = {
     certificateP: `Certificado`,
     projectP: `Proyecto`,
     gotoP: `Ir a`,
+    instituteP: `Instituto`,
+    planTitle: `Plan de estudios`,
     ifts: {
-      school: `I.F.T.S - Ciudad de Buenos Aires`,
+      school: `I.F.T.S. Nº 24 · CABA`,
       degree: `Tecnicatura Superior en Desarrollo de Software`,
-      finishDate: `Actualidad`,
+      finishDate: `Jul. 2026`,
       startDate: `Mar. 2023`,
+      status: `Egresada`,
+      progress: `Carrera completa · 23 materias`,
+      institute: `https://www.ifts24.edu.ar/`,
+      planTitle: `Plan de estudios`,
+      plan: [
+        `Formación específica: programación, bases de datos, orientación a objetos, modelado, mobile, testing, web front y back, ingeniería de software, redes.`,
+        `Fundamentos: análisis matemático, lógica computacional, estadística, TIC y gestión de proyectos.`,
+        `Formación general: inglés, taller de comunicación, trabajo, tecnología y sociedad.`,
+      ],
     },
     reactCoder: {
       degree: `Certificado de React JS`,
@@ -263,26 +281,36 @@ const ES = {
   },
   skills: {
     techP: `Habilidades técnicas`,
-    softP: `Habilidades blandas`,
+    softP: `Cómo trabajo`,
+    groups: {
+      frontend: `Frontend`,
+      mobile: `Mobile`,
+      design: `Diseño`,
+      transversal: `Transversal`,
+    },
     soft: {
-      s1: `Trabajo en equipo`,
-      s2: `empatía`,
-      s3: `adaptabilidad`,
-      s4: `colaborativa`,
-      s5: `Capacidad resolutiva`,
-      s6: `creatividad`,
-      s7: `buena organización`,
-      s8: `Trabajo bajo presión`,
-      s9: `comunicación clara`,
-      s10: `atención a los detalles`,
-      s11: `persistente`,
+      s1: `Llevo una funcionalidad desde la definición con producto y diseño hasta que queda en producción.`,
+      s2: `Interpreto Figma, alineo usabilidad y marco edge cases antes de que lleguen al usuario.`,
+      s3: `Trabajo entre frontend, backend y diseño: contratos de API, estados de UI (carga, error, vacío) y textos para quien usa el producto.`,
+      s4: `En web y mobile armo interfaces reutilizables y ordenadas por features, para que el equipo pueda seguir construyendo encima.`,
+      s5: `En freelance cierro el ciclo con el cliente: alcance, desarrollo, SEO, dominio, hosting y entrega.`,
     },
   },
   contact: {
     h2: `Contacto`,
-    p1: `¡Muchas gracias por visitar mi portfolio!`,
-    p2: ` Si te gustó mi trabajo no dudes en contactarme a través de mis redes
-    sociales`,
+    p1: `¡Gracias por visitar mi portfolio!`,
+    p2: `Si te interesa mi perfil o querés charlar sobre un proyecto, escribime por mail o LinkedIn.`,
+  },
+  freelance: {
+    h2: `Freelance`,
+  },
+  pageTitle: {
+    about: `Natalia Vega — Frontend web y mobile`,
+    studys: `Estudios — Natalia Vega`,
+    skills: `Habilidades — Natalia Vega`,
+    freelance: `Freelance — Natalia Vega`,
+    projects: `Proyectos — Natalia Vega`,
+    contact: `Contacto — Natalia Vega`,
   },
   modal: {
     title: `Curriculum Vitae`,
@@ -293,40 +321,102 @@ const ES = {
   projects: {
     h2: `Proyectos`,
     h3: `Filtrar`,
+    empty: `No hay proyectos con ese filtro.`,
     according1: `Según rol ejercido`,
     according2: `Según habilidad técnica`,
+    according3: `Según contexto`,
     ac1it1: `Diseño UX UI`,
     ac1it2: `Desarrollo Front-End`,
     ac1it3: `Desarrollo Back-End`,
-    skillsP: `Habilidades desarrolladas`,
-    shareApp: {
-      title: `Share - Aplicación móvil`,
-      subtitle: `Desarrollo en progreso con React Native`,
-      date: `Nov. 2024 - Presente`,
+    faculty: `Facultad`,
+    courses: `Cursos`,
+    personal: `Personal`,
+    rank: {
+      title: `.RANK — Reseñas de videojuegos`,
+      subtitle: `Proyecto integrador IFTS Nº 24: plataforma de reseñas con roles, explorer y backoffice`,
+      date: `Abr. 2026 – Jul. 2026`,
       text: [
-        `Diseño UX/UI original utilizando herramientas como Figma, Whimsical y Optimal Workshop`,
-        `Desarrollo de una aplicación móvil utilizando React Native y Expo`,
-        `Implementación de la gestión de estado con Zustand para interacciones dinámicas`,
-        `Estilado de la aplicación con Tailwind CSS y NativeWind`,
-        `Configuración y gestión de formateo y linting automatizado con ESLint y Prettier`,
-        `Desarrollo continuo alojado en GitHub, actualmente en progreso`,
+        `Frontend en equipo con Next.js 16 (App Router), TypeScript y Tailwind CSS v4`,
+        `Arquitectura por features, sistema de diseño propio y estado con Zustand`,
+        `Formularios y validación con React Hook Form y Zod; toasts con Sonner`,
+        `Auth y roles (user, moderator, admin): reseñas, explorer de juegos y backoffice`,
+        `Tema claro/oscuro (next-themes) y deploy en Netlify`,
       ],
-      comment: `Proyecto en curso basado en un diseño UX/UI original y desarrollado con React Native`,
+      comment: `Proyecto integrador de la tecnicatura, en equipo. Rol frontend: features, UI y design system`,
+    },
+    examenConducir: {
+      title: `Examen de conducir CABA`,
+      subtitle: `Sitio para practicar el teórico, el simulacro y entender el trámite de la licencia`,
+      date: `Jul. 2026 – Actualidad`,
+      text: [
+        `Next.js 16 (App Router, SSG), React 19, TypeScript y Tailwind CSS v4`,
+        `shadcn/ui (Radix) y modo claro/oscuro con next-themes`,
+        `Simulacro, flashcards, repositorio de preguntas y guías del trámite`,
+        `Arquitectura multi-licencia; progreso en localStorage, sin backend`,
+        `SEO, Google Analytics, AdSense y deploy en Cloudflare`,
+      ],
+      comment: `Proyecto personal. Sitio informativo, no oficial`,
     },
     bookers: {
       title: `Bookers - Proyecto de Gestión de reseñas sobre libros`,
       subtitle: `Desarrollo e implementación de un proyecto backend y frontend para la universidad`,
-      date: `Oct. 2024 - Nov. 2024`,
+      date: `Sep. 2024 – Nov. 2024`,
       text: [
-        `Desarrollo de una API REST utilizando Node.js, Express.js y MySQL`,
-        `Implementación de operaciones CRUD para libros, géneros, reseñas, banners, roles y gestión de usuarios`,
-        `Integración con una base de datos MySQL para el manejo eficiente de datos`,
-        `Desarrollo del frontend utilizando Next.js y TypeScript para una interfaz web responsiva y amigable`,
-        `Uso de Tailwind CSS y Flowbite para el estilado de componentes e inputs`,
-        `Implementación de la gestión de estado con Zustand para manejo de sesiones y actualizaciones dinámicas de datos`,
-        `Deploy de la API en Always Data y del frontend en Vercel, ambos conectados a GitHub para actualizaciones automáticas`,
+        `API REST con Node.js, Express y MySQL (mysql2)`,
+        `Auth con JWT y bcrypt; subida de archivos con Multer`,
+        `CRUD de libros, géneros, reseñas, banners, roles y usuarios`,
+        `Frontend con Next.js, TypeScript, Tailwind y Zustand; toasts con Sonner`,
+        `Deploy de la API en Always Data y del frontend en Vercel`,
       ],
       comment: `Proyecto académico para la entrega final de la materia de backend`,
+    },
+    gght: {
+      title: `GGHT Solutions`,
+      subtitle: `Sitio web para reparación de electrodomésticos en Estados Unidos`,
+      date: `Feb. 2025 – Jun. 2025`,
+      text: [
+        `Desarrollo con Next.js, TypeScript y Tailwind CSS`,
+        `i18n EN/ES con next-intl`,
+        `Formulario de contacto con Nodemailer`,
+        `SEO, performance y asesoramiento en dominio, hosting y deploy en Netlify`,
+      ],
+      comment: `Proyecto freelance publicado`,
+    },
+    jrservices: {
+      title: `J&R Contracting Services`,
+      subtitle: `Sitio web para contratista de techos, ventanas y reparaciones en Florida`,
+      date: `Nov. 2024 – Feb. 2025`,
+      text: [
+        `Desarrollo con Next.js, TypeScript y Tailwind CSS`,
+        `Formulario de contacto y presupuesto con Nodemailer`,
+        `i18n EN/ES con next-intl`,
+        `SEO, performance y entrega al cliente; deploy en Netlify`,
+      ],
+      comment: `Proyecto freelance publicado`,
+    },
+    centrogh: {
+      title: `Centro Médico Good Heart`,
+      subtitle: `Sitio web para un centro médico`,
+      date: `Abr. 2026 – May. 2026`,
+      text: [
+        `Desarrollo con React, TypeScript, Vite y Tailwind CSS`,
+        `React Router y SEO con react-helmet-async`,
+        `Investigación de opciones de turno para el cliente, contenidos institucionales y llamados a agendar`,
+        `Dominio, hosting y deploy a cargo del cliente`,
+      ],
+      comment: `Proyecto freelance publicado`,
+    },
+    megastore: {
+      title: `MegaStore`,
+      subtitle: `Sitio web para tienda de tecnología y productos para el hogar`,
+      date: `May. 2026 – Jun. 2026`,
+      text: [
+        `Desarrollo con React, TypeScript, Vite y Tailwind CSS`,
+        `Mapa con Leaflet; React Router y SEO con react-helmet-async`,
+        `Categorías de producto, contenidos comerciales y contacto`,
+        `Trabajo con el cliente hasta la publicación`,
+      ],
+      comment: `Proyecto freelance publicado`,
     },
     epsilonarEncuesta: {
       title: `EPSILONAR - Encuesta Online`,
@@ -343,7 +433,7 @@ const ES = {
     moveFinanciera: {
       title: `MOVE - Financiera`,
       subtitle: `Rediseño y prototipado de un sistema financiero`,
-      date: `Ene. 2023- Abr. 2022`,
+      date: `Ene. 2023 – Abr. 2023`,
       text: [
         `Re-diseño de logo y creacion de identidad de la marca`,
         `UI Kit and prototipado`,
@@ -358,21 +448,20 @@ const ES = {
     beautyCosmetics: {
       title: `“Beauty Cosmetics” - E-commerce de cosméticos`,
       subtitle: `Diseño, prototipado y desarrollo de proyecto basado en un e-commerce de cosméticos`,
-      date: `Sep. 2022 - Nov. 2022`,
+      date: `Dic. 2022 – Feb. 2023`,
       text: [
-        `Manejo de datos en Firebase`,
-        `Skeleton loader`,
-        `Manejo de productos en el carrito`,
-        `Validación de formularios`,
-        `HTML, CSS, JavaScript y React JS`,
-        `La página web se adapta a todos los dispositivos`,
+        `E-commerce en React JS con React Router`,
+        `Catálogo y carrito con datos en Firebase`,
+        `Estilado con CSS puro e íconos con Font Awesome`,
+        `Skeleton loader y validación de formularios`,
+        `Responsive en todos los dispositivos`,
       ],
       comment: `Proyecto integrador asociado a “React JS - Coderhouse”`,
     },
     gamingStore: {
       title: `“Gaming Store” - E-commerce de juegos`,
       subtitle: `Diseño, prototipado y desarrollo de proyecto basado en un e-commerce de juegos`,
-      date: `Sep. 2022 - Nov. 2022`,
+      date: `Nov. 2022 – Dic. 2022`,
       text: [
         `Manejo de API y JSON local`,
         `Skeleton loader`,
@@ -477,9 +566,9 @@ const ES = {
       comment: `Proyecto integrador asociado a “Diseño UX UI - CoderHouse”`,
     },
   },
-  resume: `cv_Natalia_Vega.pdf`,
   footer: {
-    p1: `Página diseñada y desarrollada por Natalia Vega`,
+    p1: `Diseñada y desarrollada por Natalia Vega en mayo de 2023`,
+    p2: `Contenido actualizado en agosto de 2026`,
   },
 };
 const EN = {
@@ -489,44 +578,51 @@ const EN = {
     p3: `Skills`,
     p4: `Projects`,
     p5: `Contact`,
-    p6: `Resume`,
+    p6: `Freelance`,
+    menuOpen: `Close menu`,
+    menuClose: `Open menu`,
+    themeDark: `Switch to dark mode`,
+    themeLight: `Switch to light mode`,
+    closeStudy: `Close study details`,
+    skip: `Skip to content`,
   },
   aboutMe: {
     h2: `About Me`,
     p1: (
       <P>
-        I am a <Span>creative</Span>, <Span>enthusiastic</Span>, and{" "}
-        <Span>responsible</Span> person. Currently, I am pursuing a{" "}
-        <Span>higher technical degree in software development</Span>, which
-        allows me to continuously expand my knowledge and grow in my career.
+        I am a <Span>Software Development Technician</Span> from I.F.T.S. No. 24
+        (March 2023 – July 2026). I specialize in{" "}
+        <Span>web and mobile frontend</Span>, with a background in{" "}
+        <Span>UX/UI design</Span> and product thinking. I like to be involved
+        from business and user-experience definitions through to the development
+        that connects frontend and backend.
       </P>
     ),
     p2: (
       <P>
-        I started my career in <Span>2022</Span> by studying{" "}
-        <Span>UX/UI design</Span> and working on freelance projects. Later, I
-        specialized in <Span>web development</Span> using <Span>React JS</Span>,{" "}
-        <Span>Next.js</Span>, <Span>JavaScript</Span>, and{" "}
-        <Span>TypeScript</Span>.
+        I have been part of <Span>SportClub</Span> since <Span>June 2023</Span>:
+        I started with landings and management systems; since{" "}
+        <Span>February 2024</Span> my main role is the members app for{" "}
+        <Span>iOS</Span> and <Span>Android</Span> with <Span>React Native</Span>
+        , <Span>Expo</Span> and <Span>TypeScript</Span>, and I still work on
+        backoffices, CMS and product landings with <Span>Next.js</Span> and{" "}
+        <Span>Tailwind</Span>.
       </P>
     ),
     p3: (
       <P>
-        Since <Span>July 2023</Span>, I have worked as a{" "}
-        <Span>frontend developer</Span>, focusing on web pages and management
-        systems. In <Span>February 2024</Span>, I expanded my focus to{" "}
-        <Span>mobile development</Span>, creating applications for{" "}
-        <Span>iOS</Span> and <Span>Android</Span> using{" "}
-        <Span>React Native</Span>, integrating my knowledge of{" "}
-        <Span>frontend</Span> and <Span>UX/UI</Span>.
+        In parallel I work as a <Span>freelancer</Span>: websites and landings
+        with <Span>React</Span>, <Span>Next.js</Span>, <Span>Vite</Span>,{" "}
+        <Span>TypeScript</Span> and <Span>Tailwind</Span>. I work with the
+        client and the designer, when there is one: requirements, SEO, domain,
+        hosting and deploy. Published work is in the Freelance section.
       </P>
     ),
     p4: (
       <P>
-        I enjoy <Span>working in a team</Span>, adapting quickly with{" "}
-        <Span>empathy</Span> and <Span>clear communication</Span>. I am{" "}
-        <Span>detail-oriented</Span> and effective in{" "}
-        <Span>solving emerging problems</Span>.
+        I enjoy <Span>working in a team</Span>, reading Figma, aligning
+        usability and catching edge cases. I am <Span>detail-oriented</Span> and
+        effective at solving problems.
       </P>
     ),
   },
@@ -536,11 +632,22 @@ const EN = {
     certificateP: `Certificate`,
     projectP: `Project`,
     gotoP: `Go to`,
+    instituteP: `Institute`,
+    planTitle: `Curriculum`,
     ifts: {
-      school: `I.F.T.S - Ciudad de Buenos Aires `,
+      school: `I.F.T.S. No. 24 · CABA`,
       degree: `Technician in Software Development`,
-      finishDate: `Present`,
+      finishDate: `Jul. 2026`,
       startDate: `Mar. 2023`,
+      status: `Graduated`,
+      progress: `Program complete · 23 courses`,
+      institute: `https://www.ifts24.edu.ar/`,
+      planTitle: `Curriculum`,
+      plan: [
+        `Core: programming, databases, OOP, modeling, mobile, testing, web front and back, software engineering, networks.`,
+        `Foundations: calculus, computational logic, statistics, ICT and project management.`,
+        `General: English, communication workshop, work, technology and society.`,
+      ],
     },
     reactCoder: {
       degree: ` React JS Certificate `,
@@ -572,63 +679,136 @@ const EN = {
   },
   skills: {
     techP: `Technical Skills`,
-    softP: `Soft Skills`,
+    softP: `How I work`,
+    groups: {
+      frontend: `Frontend`,
+      mobile: `Mobile`,
+      design: `Design`,
+      transversal: `Cross-cutting`,
+    },
     soft: {
-      s1: `Teamwork`,
-      s2: `Empathy`,
-      s3: `Adaptabilityv`,
-      s4: `Collaboration`,
-      s5: `Problem solving`,
-      s6: `Creativity`,
-      s7: `Good organization`,
-      s8: `Work under pressure`,
-      s9: `Communicate clearly`,
-      s10: `Attention to detail`,
-      s11: `Persistent`,
+      s1: `I take a feature from product and design definition through to production.`,
+      s2: `I read Figma, align usability, and flag edge cases before they reach the user.`,
+      s3: `I work across frontend, backend, and design: API contracts, UI states (loading, error, empty), and copy for the person using the product.`,
+      s4: `On web and mobile I build reusable UI, organized by features, so the team can keep building on top of it.`,
+      s5: `In freelance work I own the full cycle with the client: scope, development, SEO, domain, hosting, and handoff.`,
     },
   },
   contact: {
     h2: `Contact`,
-    p1: `Thanks for visiting my portfolio`,
-    p2: `If you liked my work, don’t hesitate to contact me on my social media`,
+    p1: `Thanks for visiting my portfolio!`,
+    p2: `If my profile is a fit or you want to talk about a project, write to me by email or LinkedIn.`,
+  },
+  freelance: {
+    h2: `Freelance`,
+  },
+  pageTitle: {
+    about: `Natalia Vega — Frontend web y mobile`,
+    studys: `Studies — Natalia Vega`,
+    skills: `Skills — Natalia Vega`,
+    freelance: `Freelance — Natalia Vega`,
+    projects: `Projects — Natalia Vega`,
+    contact: `Contact — Natalia Vega`,
   },
   projects: {
     h2: `Projects`,
     h3: `Filter`,
+    empty: `No projects match that filter.`,
     according1: `According to the role fulfilled`,
     according2: `According to technical abilities`,
+    according3: `According to context`,
     ac1it1: `UX UI Design `,
     ac1it2: `Front End Development`,
     ac1it3: `Back End Development`,
-    skillsP: `Skills developed`,
-    shareApp: {
-      title: `Share - Mobile Application`,
-      subtitle: `Developed with React Native`,
-      date: `Nov. 2024 - Present`,
+    faculty: `College`,
+    courses: `Courses`,
+    personal: `Personal`,
+    rank: {
+      title: `.RANK — Video game reviews`,
+      subtitle: `IFTS No. 24 capstone: review platform with roles, game explorer and backoffice`,
+      date: `Apr. 2026 – Jul. 2026`,
       text: [
-        `Original UX/UI design using tools like Figma, Whimsical, and Optimal Workshop`,
-        `Development of a mobile application using React Native and Expo`,
-        `Implementation of state management with Zustand for dynamic interactions`,
-        `Styling the application using Tailwind CSS and NativeWind`,
-        `Setup and management of automated formatting and linting using ESLint and Prettier`,
-        `Continuous development hosted on GitHub, currently in progress`,
+        `Frontend in a team with Next.js 16 (App Router), TypeScript and Tailwind CSS v4`,
+        `Feature-based architecture, custom design system and Zustand for state`,
+        `Forms and validation with React Hook Form and Zod; toasts with Sonner`,
+        `Auth and roles (user, moderator, admin): reviews, game explorer and backoffice`,
+        `Light/dark theme (next-themes) and deploy on Netlify`,
       ],
-      comment: `Ongoing project based on an original UX/UI design and developed with React Native`,
+      comment: `Capstone project for the technical degree, as a team. Frontend role: features, UI and design system`,
+    },
+    examenConducir: {
+      title: `CABA driving test`,
+      subtitle: `Practice the theory test, run the simulator and understand the license process`,
+      date: `Jul. 2026 – Present`,
+      text: [
+        `Next.js 16 (App Router, SSG), React 19, TypeScript and Tailwind CSS v4`,
+        `shadcn/ui (Radix) and light/dark mode with next-themes`,
+        `Simulator, flashcards, question bank and process guides`,
+        `Multi-license architecture; progress in localStorage, no backend`,
+        `SEO, Google Analytics, AdSense and deploy on Cloudflare`,
+      ],
+      comment: `Personal project. Unofficial informational site`,
     },
     bookers: {
       title: `Bookers - Book Management Project`,
       subtitle: `Development and implementation of a backend and frontend project for the university`,
-      date: `Oct. 2024 - Nov. 2024`,
+      date: `Sep. 2024 – Nov. 2024`,
       text: [
-        `Development of a REST API using Node.js, Express.js, and MySQL`,
-        `Implementation of CRUD operations for books, reviews, genres, roles, banners and user management`,
-        `Integration with a MySQL database for efficient data handling`,
-        `Frontend development using Next.js and TypeScript for a responsive and user-friendly web interface`,
-        `Utilized Tailwind CSS and Flowbite for styling components and inputs`,
-        `State management implemented with Zustand for session handling and dynamic data updates`,
-        `Deployment of the API on Always Data and the frontend on Vercel, both connected to GitHub for automated updates`,
+        `REST API with Node.js, Express and MySQL (mysql2)`,
+        `Auth with JWT and bcrypt; file uploads with Multer`,
+        `CRUD for books, genres, reviews, banners, roles and users`,
+        `Frontend with Next.js, TypeScript, Tailwind and Zustand; toasts with Sonner`,
+        `API deployed on Always Data and frontend on Vercel`,
       ],
       comment: `Academic project for the final delivery in the backend course`,
+    },
+    gght: {
+      title: `GGHT Solutions`,
+      subtitle: `Website for appliance repair in the United States`,
+      date: `Feb. 2025 – Jun. 2025`,
+      text: [
+        `Built with Next.js, TypeScript and Tailwind CSS`,
+        `EN/ES i18n with next-intl`,
+        `Contact form with Nodemailer`,
+        `SEO, performance, and advice on domain, hosting and Netlify deploy`,
+      ],
+      comment: `Published freelance project`,
+    },
+    jrservices: {
+      title: `J&R Contracting Services`,
+      subtitle: `Website for a roofing, windows and home-repair contractor in Florida`,
+      date: `Nov. 2024 – Feb. 2025`,
+      text: [
+        `Built with Next.js, TypeScript and Tailwind CSS`,
+        `Contact and quote form with Nodemailer`,
+        `EN/ES i18n with next-intl`,
+        `SEO, performance and client handoff; deploy on Netlify`,
+      ],
+      comment: `Published freelance project`,
+    },
+    centrogh: {
+      title: `Centro Médico Good Heart`,
+      subtitle: `Website for a medical center`,
+      date: `Apr. 2026 – May 2026`,
+      text: [
+        `Built with React, TypeScript, Vite and Tailwind CSS`,
+        `React Router and SEO with react-helmet-async`,
+        `Researched appointment-booking options for the client, plus institutional content and CTAs to book`,
+        `Domain, hosting and deploy handed over to the client`,
+      ],
+      comment: `Published freelance project`,
+    },
+    megastore: {
+      title: `MegaStore`,
+      subtitle: `Website for a home and technology store`,
+      date: `May 2026 – Jun. 2026`,
+      text: [
+        `Built with React, TypeScript, Vite and Tailwind CSS`,
+        `Map with Leaflet; React Router and SEO with react-helmet-async`,
+        `Product categories, commercial content and contact`,
+        `Worked with the client through to launch`,
+      ],
+      comment: `Published freelance project`,
     },
     epsilonarEncuesta: {
       title: `EPSILONAR - Online Survey`,
@@ -645,7 +825,7 @@ const EN = {
     moveFinanciera: {
       title: `MOVE - Financial`,
       subtitle: ` Redesign and prototyped of a finance system `,
-      date: `Jan. 2023- Apr. 2022`,
+      date: `Jan. 2023 – Apr. 2023`,
       text: [
         `Logo re-design and brand identit creation`,
         `UI Kit and prototyped`,
@@ -655,26 +835,25 @@ const EN = {
         `Userflow`,
         `New paths in the system`,
       ],
-      comment: `Freelance project carried out as a team together with a developer ”`,
+      comment: `Freelance project carried out as a team together with a developer`,
     },
     beautyCosmetics: {
       title: `“Beauty Cosmetics” – Cosmetics e-commerce`,
       subtitle: ` Design, prototyped and project development based on a cosmetics e-commerce`,
-      date: `Sep. 2022 - Nov. 2022`,
+      date: `Dec. 2022 – Feb. 2023`,
       text: [
-        ` Data handling in Firebase`,
-        `Skeleton loader`,
-        ` Management of products in the cart`,
-        ` Form validation`,
-        `HTML, CSS, JavaScript y React JS`,
-        ` The website adapts to all devices`,
+        `E-commerce in React JS with React Router`,
+        `Catalog and cart with Firebase`,
+        `Styled with plain CSS and Font Awesome icons`,
+        `Skeleton loader and form validation`,
+        `Responsive on all devices`,
       ],
       comment: ` Integrator project associated with "React JS - Coderhouse"”`,
     },
     gamingStore: {
       title: `“Gaming Store” - E-commerce of games`,
       subtitle: ` Design, prototyped and project development based on a games e-commerce`,
-      date: `Sep. 2022 - Nov. 2022`,
+      date: `Nov. 2022 – Dec. 2022`,
       text: [
         ` Local API and JSON Handling`,
         `Skeleton loader`,
@@ -775,7 +954,7 @@ const EN = {
         ` Usability tests`,
         ` Development of UI kit and Atomic Design`,
       ],
-      comment: ` Integrative project associated with "Web Design - NUCBA" `,
+      comment: `Integrative project associated with "UX UI Design - CoderHouse"`,
     },
   },
   modal: {
@@ -784,9 +963,9 @@ const EN = {
     accept: `accept`,
     decline: `decline`,
   },
-  resume: `resume_Natalia_Vega.pdf`,
   footer: {
-    p1: `Web page design and developed by Natalia Vega`,
+    p1: `Designed and developed by Natalia Vega in May 2023`,
+    p2: `Content updated in August 2026`,
   },
 };
 
@@ -805,6 +984,10 @@ const Theme = ({ children }) => {
       setLangSelected(window.localStorage.getItem(`localLanguage`));
     }
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = langSelected === `EN` ? `en` : `es`;
+  }, [langSelected]);
 
   return (
     <ThemeProvider

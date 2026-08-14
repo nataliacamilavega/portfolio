@@ -1,12 +1,12 @@
 # PORTAFOLIO REACT - Natalia Vega
 
-- **Última actualización:** 31 de mayo de 2023
+- **Última actualización:** 14 de agosto de 2026
 - **Versión:** 1.0.0
-- **Link del proyecto:** [Portafolio Natalia Vega](https://nataliavega-portfolio.vercel.app/)
+- **Link del proyecto:** [Portafolio Natalia Vega](https://nataliavega.com.ar)
 
 ## Descripción
 
-Este proyecto es un portafolio personal desarrollado en React. El proyecto incluye una página de inicio, una página de proyectos, una página de habilidades y una página de contacto. El proyecto incluye un tema oscuro y claro, así como la posibilidad de cambiar el idioma entre inglés y español. Además, el proyecto incluye la posibilidad de descargar el CV en inglés y español.
+Este proyecto es un portafolio personal desarrollado en React. Incluye inicio, estudios, habilidades, proyectos, freelance y contacto, con tema oscuro/claro e idioma inglés/español. Si el perfil interesa, el contacto es por mail o LinkedIn (no hay descarga de CV).
 
 ## Tecnologías Utilizadas
 
@@ -56,20 +56,6 @@ code .
 npm start
 ```
 
-## Capturas de Pantalla
-
-A continuación se muestran algunas capturas de pantalla del proyecto:
-
-- **Version 1.0.0:** 31 de mayo de 2023 (Con modificaciones en los textos. Diseño y codigo de la fecha indicada)
-  ![Captura de Pantalla 1](./screenshots/1.png)
-  ![Captura de Pantalla 2](./screenshots/2.png)
-  ![Captura de Pantalla 3](./screenshots/3.png)
-  ![Captura de Pantalla 4](./screenshots/4.png)
-  ![Captura de Pantalla 5](./screenshots/5.png)
-  ![Captura de Pantalla 6](./screenshots/6.png)
-  ![Captura de Pantalla 7](./screenshots/7.png)
-  ![Captura de Pantalla 8](./screenshots/8.png)
-
 ## Autor
 
 - [Natalia Vega](https://www.linkedin.com/in/nataliacamilavega/)
@@ -78,9 +64,9 @@ A continuación se muestran algunas capturas de pantalla del proyecto:
 
 - [x] Tema oscuro y claro
 - [x] Multi-idioma: inglés y español
-- [x] Descargar CV en inglés y español
 - [x] Navegación utilizando React Router Dom
 - [x] Actualizar datos Agosto 2024
+- [x] Actualizar datos Agosto 2026 (trabajo, freelance, título; sin descarga de CV)
 - [x] Implementar Lint.
 - [ ] Rediseño, implementación con NextJS, Tailwind y TypeScript.
 - [ ] Implementar Analytics.

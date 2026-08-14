@@ -1,17 +1,29 @@
 import styled from 'styled-components'
 
-const tecnicalItem = ({ thname, icon }) => {
+const TecnicalItem = ({ thname, icon, mono }) => {
   const Container = styled.div`
-    height: 96px;
+    height: auto;
+    min-height: 56px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    flex: 0 1 80px;
+    gap: 6px;
+    flex: 0 1 64px;
     align-items: center;
-    img {
-      max-height: 54px;
+    .skillIcon {
+      font-size: 28px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img,
+      svg {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+      }
     }
-    .filter {
+    .mono {
       filter: ${(props) => props.theme.mode.filterInvert};
     }
   `
@@ -19,31 +31,23 @@ const tecnicalItem = ({ thname, icon }) => {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    font-variant: all-small-caps;
-    padding: 0 8px;
+    font-size: 12px;
+    line-height: 1.2;
     text-align: center;
+    max-width: 72px;
   `
-  const equalTo = (value, skill) => {
-    return value === skill
-  }
 
   return (
     <Container>
-      <img
-        alt={`imagen de` + thname}
-        className={
-          equalTo(thname, `github`) ||
-          equalTo(thname, `git`) ||
-          equalTo(thname, `styled components`)
-            ? `filter`
-            : ``
-        }
-        src={`assets/icons/` + icon}
-      />
+      <span
+        aria-hidden="true"
+        className={mono ? `skillIcon mono` : `skillIcon`}
+      >
+        {icon}
+      </span>
       <P>{thname}</P>
     </Container>
   )
 }
 
-export default tecnicalItem
+export default TecnicalItem

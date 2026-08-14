@@ -1,169 +1,166 @@
-import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
-// Style
-import styled, { useTheme } from 'styled-components'
-// iconos
+import styled, { useTheme } from "styled-components";
 import {
-  MdInfoOutline,
-  MdOutlineFileDownload,
-  MdOutlineFolderSpecial,
-  MdOutlinePsychology,
-  MdOutlineSchool,
-  MdOutlineContactSupport,
-} from 'react-icons/md'
-import { CgClose, CgMenu } from 'react-icons/cg'
+  Brain,
+  Briefcase,
+  ChatCircle,
+  Folder,
+  GraduationCap,
+  Info,
+  List,
+  X,
+} from "@phosphor-icons/react";
 
-import ButtonNav from '../Buttons/ButtonNav/ButtonNav'
-import SwitchMode from '../Buttons/ButtonNav/switchMode'
-import DropDown from '../Dropdown/DropDown'
+import ButtonNav from "../Buttons/ButtonNav/ButtonNav";
+import SwitchMode from "../Buttons/ButtonNav/switchMode";
+import DropDown from "../Dropdown/DropDown";
 
-const NavBar = ({ setterText, setterTitle, setterModal, openModal, setterMenu, openMenu }) => {
-  const location = useLocation()
+const Nav = styled.nav`
+  width: 100%;
+  max-width: 1400px;
+  height: 52px;
+  display: flex;
+  background: ${(props) => props.theme.mode.colors.bgNavBar};
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  position: fixed;
+  z-index: 3000;
+  width: calc(100% - 92px - 92px);
 
-  const [sectionSelected, setSectionSelected] = useState(location.pathname)
+  @media (max-width: 1280px) {
+    width: calc(100% - 100px);
+  }
+  @media (max-width: 960px) {
+    width: ${(props) => (props.$open ? `50%` : `56px`)};
+    height: ${(props) => (props.$open ? `calc(100vh - 32px)` : `56px`)};
+    flex-direction: column;
+    border-radius: 50px;
+    padding-bottom: ${(props) => (props.$open ? `52px` : `0`)};
+    justify-content: ${(props) => (props.$open ? `start` : `center`)};
+  }
+  @media (max-width: 500px) {
+    max-width: ${(props) => (props.$open ? `calc(100% - 32px)` : `56px`)};
+    width: ${(props) => (props.$open ? `100%` : `56px`)};
+  }
+`;
 
-  const Nav = styled.nav`
-    width: 100%;
-    max-width: 1400px;
-    height: 52px;
+const MenuButton = styled.button`
+  display: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  @media (max-width: 960px) {
     display: flex;
-    background: ${(props) => props.theme.mode.colors.bgNavBar};
-    border-radius: 100px;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    position: fixed;
-    z-index: 3000;
-    width: calc(100% - 92px - 92px);
-
-    @media (max-width: 1280px) {
-      width: calc(100% - 100px);
-    }
-    @media (max-width: 960px) {
-      width: ${openMenu ? `50%` : `56px`};
-      height: ${openMenu ? `calc(100vh - 32px)` : `56px`};
-      flex-direction: column;
-      border-radius: 50px;
-      padding-bottom: ${openMenu ? `52px` : `0`};
-      justify-content: ${openMenu ? `start` : `center`};
-    }
-    @media (max-width: 500px) {
-      max-width: ${openMenu ? `calc(100% - 32px)` : `56px`};
-      width: ${openMenu ? `100%` : `56px`};
-    }
-  `
-  const MenuIconContainer = styled.div`
-    display: none;
-    @media (max-width: 960px) {
-      display: flex;
-      font-size: 24px;
-      justify-content: ${openMenu ? `flex-end` : `center`};
-      align-items: ${openMenu ? `flex-end` : `center`};
-      width: 100%;
-      height: ${openMenu ? `56px` : `100%`};
-      padding: ${openMenu ? `24px 32px 0 32px` : `8px`};
-
-      cursor: pointer;
-    }
-  `
-  const ButtonNavContainer = styled.div`
-    width: calc(100% - 60px);
+    font-size: 24px;
+    justify-content: ${(props) => (props.$open ? `flex-end` : `center`)};
+    align-items: ${(props) => (props.$open ? `flex-end` : `center`)};
     width: 100%;
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: ${(props) => (props.$open ? `56px` : `100%`)};
+    min-height: 44px;
+    padding: ${(props) => (props.$open ? `24px 32px 0 32px` : `8px`)};
+  }
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.mode.colors.text};
+    outline-offset: 2px;
+  }
+`;
 
-    @media (max-width: 960px) {
-      display: ${openMenu ? `flex` : `none`};
-      width: 100%;
-      flex-direction: column;
-    }
-  `
-  // Para cambiar el idioma y usar el theme fuera de styled components
-  const theme = useTheme()
-  // Array de objetos de botones
+const ButtonNavContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  @media (max-width: 960px) {
+    display: ${(props) => (props.$open ? `flex` : `none`)};
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const NavBar = ({ setterMenu, openMenu }) => {
+  const theme = useTheme();
   const buttonsNav = [
     {
       bgColor: `Purple`,
       text: theme.lang.navBar.p1,
-      icon: <MdInfoOutline />,
+      icon: <Info />,
       link: `/`,
       id: `aboutme`,
     },
     {
-      bgColor: 'Yellow',
-      text: theme.lang.navBar.p2,
-      icon: <MdOutlineSchool />,
-      link: `/studys`,
-      id: `studys`,
-    },
-    {
-      bgColor: 'Green',
+      bgColor: "Green",
       text: theme.lang.navBar.p3,
-      icon: <MdOutlinePsychology />,
+      icon: <Brain />,
       link: `/habilities`,
       id: `habilities`,
     },
     {
-      bgColor: 'Blue',
+      bgColor: "Pink",
+      text: theme.lang.navBar.p6,
+      icon: <Briefcase />,
+      link: `/freelance`,
+      id: `freelance`,
+    },
+    {
+      bgColor: "Yellow",
+      text: theme.lang.navBar.p2,
+      icon: <GraduationCap />,
+      link: `/studys`,
+      id: `studys`,
+    },
+    {
+      bgColor: "Blue",
       text: theme.lang.navBar.p4,
-      icon: <MdOutlineFolderSpecial />,
+      icon: <Folder />,
       link: `/projects`,
       id: `projects`,
     },
     {
-      bgColor: 'Pink',
+      bgColor: "Pink",
       text: theme.lang.navBar.p5,
-      icon: <MdOutlineContactSupport />,
+      icon: <ChatCircle />,
       link: `/contact`,
       id: `contact`,
     },
-    {
-      bgColor: 'Pink',
-      text: theme.lang.navBar.p6,
-      icon: <MdOutlineFileDownload />,
-      href: 'cv.pdf',
-      id: `resume`,
-      titleDialog: theme.lang.modal.title,
-      textDialog: theme.lang.modal.text,
-      dialog: `true`,
-    },
-  ]
-  // Renderizado de botones
-  const renderButtons = buttonsNav.map((button, index) => (
-    <ButtonNav
-      key={`ButtonNav` + index}
-      bgColor={button.bgColor}
-      dialog={button.dialog}
-      icon={button.icon}
-      id={button.id}
-      link={button.link}
-      openModal={openModal}
-      sectionSelected={sectionSelected}
-      setterMenu={setterMenu}
-      setterModal={setterModal}
-      setterSection={setSectionSelected}
-      setterTextDialog={setterText}
-      setterTitleDialog={setterTitle}
-      stateMenu={openMenu}
-      text={button.text}
-      textDialog={button.textDialog}
-      titleDialog={button.titleDialog}
-    />
-  ))
+  ];
 
   return (
-    <Nav>
-      <MenuIconContainer className="closeMenu" onClick={() => setterMenu(!openMenu)}>
-        {openMenu ? <CgClose /> : <CgMenu />}
-      </MenuIconContainer>
-      <ButtonNavContainer>{renderButtons}</ButtonNavContainer>
-      {/* Cambiar width calc(100% - 60px) en ButtonNavContainer */}
+    <Nav $open={openMenu}>
+      <MenuButton
+        $open={openMenu}
+        aria-expanded={openMenu}
+        aria-label={
+          openMenu ? theme.lang.navBar.menuOpen : theme.lang.navBar.menuClose
+        }
+        className="closeMenu"
+        type="button"
+        onClick={() => setterMenu(!openMenu)}
+      >
+        {openMenu ? <X aria-hidden="true" /> : <List aria-hidden="true" />}
+      </MenuButton>
+      <ButtonNavContainer $open={openMenu}>
+        {buttonsNav.map((button) => (
+          <ButtonNav
+            key={button.id}
+            bgColor={button.bgColor}
+            icon={button.icon}
+            link={button.link}
+            setterMenu={setterMenu}
+            stateMenu={openMenu}
+            text={button.text}
+          />
+        ))}
+      </ButtonNavContainer>
       <SwitchMode stateMenu={openMenu} />
       <DropDown stateMenu={openMenu} />
     </Nav>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

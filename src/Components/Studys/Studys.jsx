@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import styled, { useTheme } from 'styled-components'
+import { useState } from "react";
+import styled, { useTheme } from "styled-components";
 
-import StudyDisplay from './StudyDisplay'
-import StudyItem from './StudyItem'
+import StudyDisplay from "./StudyDisplay";
+import StudyItem from "./StudyItem";
 
 const Studys = () => {
   // Para cambiar el idioma y usar el theme fuera de styled components
-  const theme = useTheme()
+  const theme = useTheme();
 
   const studyCollection = [
     //IFTS
@@ -16,6 +16,13 @@ const Studys = () => {
       degree: theme.lang.studys.ifts.degree,
       finishDate: theme.lang.studys.ifts.finishDate,
       startDate: theme.lang.studys.ifts.startDate,
+      project: `rankCover.webp`,
+      link: `https://rank-ifts24.netlify.app/`,
+      status: theme.lang.studys.ifts.status,
+      progress: theme.lang.studys.ifts.progress,
+      instituteLink: theme.lang.studys.ifts.institute,
+      planTitle: theme.lang.studys.ifts.planTitle,
+      studyPlan: theme.lang.studys.ifts.plan,
     },
     // React coderhouse
     {
@@ -23,8 +30,8 @@ const Studys = () => {
       schoolLogo: `coderLogo.svg`,
       degree: theme.lang.studys.reactCoder.degree,
       grade: `10`,
-      credential: `coderReactCredential.png`,
-      project: `coderReactProject.png`,
+      credential: `coderReactCredential.webp`,
+      project: `coderReactProject.webp`,
       link: `https://beautycosmetics.vercel.app/`,
       finishDate: ``,
       startDate: ``,
@@ -35,8 +42,8 @@ const Studys = () => {
       schoolLogo: `nucbaLogo.svg`,
       degree: theme.lang.studys.jsNucba.degree,
       grade: ``,
-      credential: `nucbaJSCredential.png`,
-      project: `nucbaJSProject.png`,
+      credential: `nucbaJSCredential.webp`,
+      project: `nucbaJSProject.webp`,
       link: `https://gamingstore-bynatalia.vercel.app/`,
       finishDate: ``,
       startDate: ``,
@@ -47,8 +54,8 @@ const Studys = () => {
       schoolLogo: `coderLogo.svg`,
       degree: theme.lang.studys.uxuiAdvCoder.degree,
       grade: `10`,
-      credential: `coderUXACredential.png`,
-      project: `coderUXAProject.png`,
+      credential: `coderUXACredential.webp`,
+      project: `coderUXAProject.webp`,
       link: `https://www.behance.net/gallery/150898443/Re-diseno-de-la-web-HBO-MAX-Natalia-Vega`,
       finishDate: ``,
       startDate: ``,
@@ -59,8 +66,8 @@ const Studys = () => {
       schoolLogo: `nucbaLogo.svg`,
       degree: theme.lang.studys.webdesignNucba.degree,
       grade: ``,
-      credential: `nucbaDWebCredential.png`,
-      project: `nucbaDWebProject.png`,
+      credential: `nucbaDWebCredential.webp`,
+      project: `nucbaDWebProject.webp`,
       link: `https://nereidas-cruceros.vercel.app/`,
       finishDate: ``,
       startDate: ``,
@@ -71,8 +78,8 @@ const Studys = () => {
       schoolLogo: `coderLogo.svg`,
       degree: theme.lang.studys.uxuiinitialCoder.degree,
       grade: `10`,
-      credential: `coderUXCredential.png`,
-      project: `coderUXProject.png`,
+      credential: `coderUXCredential.webp`,
+      project: `coderUXProject.webp`,
       link: `https://www.behance.net/gallery/142527049/Share-Natalia-Vega`,
       finishDate: ``,
       startDate: ``,
@@ -101,7 +108,7 @@ const Studys = () => {
       finishDate: theme.lang.studys.bachiller.finishDate,
       startDate: theme.lang.studys.bachiller.startDate,
     },
-  ]
+  ];
   const Container = styled.section`
     width: 100%;
     padding-top: 92px;
@@ -113,7 +120,7 @@ const Studys = () => {
     @media (max-width: 960px) {
       padding-top: 56px;
     }
-  `
+  `;
   const StudyDisplayContainer = styled.div`
     display: flex;
     gap: 16px;
@@ -123,14 +130,14 @@ const Studys = () => {
       width: 100%;
       justify-content: center;
     }
-  `
-  const H2 = styled.h2`
-    font-family: 'Convergence';
+  `;
+  const H2 = styled.h1`
+    font-family: "Convergence";
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     color: ${(propsTheme) => propsTheme.theme.mode.colors.yellow};
-  `
+  `;
   const StudysContainer = styled.article`
     display: flex;
     flex-direction: column;
@@ -139,8 +146,8 @@ const Studys = () => {
     @media (max-width: 960px) {
       width: 100%;
     }
-  `
-  const [studySelected, setStudySelected] = useState()
+  `;
+  const [studySelected, setStudySelected] = useState();
   const renderStudys = studyCollection.map((study, index) => (
     <StudyItem
       key={study.degree + index}
@@ -155,13 +162,16 @@ const Studys = () => {
       schoolLogo={study.schoolLogo}
       setterStudySelected={setStudySelected}
       startDate={study.startDate}
+      status={study.status}
+      studyPlan={study.studyPlan}
+      instituteLink={study.instituteLink}
       studySelected={studySelected}
     />
-  ))
+  ));
 
-  const findStudySelected = studyCollection.find((study) => {
-    if (studySelected && studySelected === study.degree) return study
-  })
+  const findStudySelected = studyCollection.find(
+    (study) => studySelected && studySelected === study.degree,
+  );
 
   return (
     <Container>
@@ -171,8 +181,11 @@ const Studys = () => {
         {findStudySelected && (
           <StudyDisplay
             certificateP={theme.lang.studys.certificateP}
+            closeLabel={theme.lang.navBar.closeStudy}
             gotoP={theme.lang.studys.gotoP}
             infoStudySelected={findStudySelected}
+            instituteP={theme.lang.studys.instituteP}
+            planTitle={theme.lang.studys.planTitle}
             projectP={theme.lang.studys.projectP}
             setterStudySelected={setStudySelected}
             studySelected={studySelected}
@@ -180,7 +193,7 @@ const Studys = () => {
         )}
       </StudyDisplayContainer>
     </Container>
-  )
-}
+  );
+};
 
-export default Studys
+export default Studys;

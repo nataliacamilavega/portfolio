@@ -1,13 +1,10 @@
-// React imports
-import React from "react";
 import styled, { useTheme } from "styled-components";
-import { BsStars } from "react-icons/bs";
 
 import TecnicalItem from "./TecnicalItem";
 import SoftItem from "./SoftItem";
-// Style
+import { skillIcons } from "./skillIcons";
+
 const Habilities = () => {
-  // Para cambiar el idioma y usar el theme fuera de styled components
   const theme = useTheme();
   const Container = styled.section`
     width: 100%;
@@ -20,7 +17,23 @@ const Habilities = () => {
       padding-top: 56px;
     }
   `;
-  const H2 = styled.h2`
+  const H2 = styled.h1`
+    font-family: "Convergence";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: ${(propsTheme) => propsTheme.theme.mode.colors.green};
+  `;
+  const H3 = styled.h2`
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    width: 100%;
+    max-width: 860px;
+    align-self: center;
+  `;
+  const SoftTitle = styled.h2`
     font-family: "Convergence";
     font-style: normal;
     font-weight: 400;
@@ -31,229 +44,111 @@ const Habilities = () => {
     align-self: center;
     display: flex;
     flex-flow: row wrap;
-    gap: 24px;
-    max-width: 700px;
-    justify-content: center;
+    gap: 16px 12px;
+    max-width: 860px;
+    width: 100%;
+    justify-content: flex-start;
   `;
   const ContainerSoft = styled.div`
     display: flex;
-    flex-flow: row wrap;
-    row-gap: 24px;
-    column-gap: 52px;
-    max-width: calc(700px + 32px);
+    flex-direction: column;
+    gap: 12px;
+    max-width: 860px;
+    align-self: center;
+    width: 100%;
   `;
-  const tecnicalH = [
-    // HTML
+  const groups = [
     {
-      thname: `HTML5`,
-      icon: `htmlIcon.svg`,
+      title: theme.lang.skills.groups.frontend,
+      items: [
+        { thname: `HTML5`, icon: skillIcons.html() },
+        { thname: `CSS3`, icon: skillIcons.css() },
+        { thname: `JavaScript`, icon: skillIcons.javascript() },
+        { thname: `TypeScript`, icon: skillIcons.typescript() },
+        { thname: `React`, icon: skillIcons.react() },
+        { thname: `Next.js`, icon: skillIcons.next(), mono: true },
+        { thname: `Vite`, icon: skillIcons.vite() },
+        { thname: `Tailwind`, icon: skillIcons.tailwind() },
+        { thname: `Zustand`, icon: skillIcons.zustand() },
+        { thname: `TanStack Query`, icon: skillIcons.tanstack() },
+        { thname: `React Hook Form`, icon: skillIcons.rhf() },
+        { thname: `Zod`, icon: skillIcons.zod() },
+        { thname: `i18n`, icon: skillIcons.i18n() },
+        { thname: `SEO`, icon: skillIcons.seo() },
+      ],
     },
-    // CSS
     {
-      thname: `CSS3`,
-      icon: `cssIcon.svg`,
+      title: theme.lang.skills.groups.mobile,
+      items: [
+        { thname: `React Native`, icon: skillIcons.react() },
+        { thname: `Expo`, icon: skillIcons.expo(), mono: true },
+        { thname: `Expo Router`, icon: skillIcons.expo(), mono: true },
+        { thname: `EAS`, icon: skillIcons.expo(), mono: true },
+        { thname: `Deep linking`, icon: skillIcons.deepLink() },
+        { thname: `Push`, icon: skillIcons.push() },
+        { thname: `Android`, icon: skillIcons.android() },
+        { thname: `Android Studio`, icon: skillIcons.androidStudio() },
+        { thname: `iOS`, icon: skillIcons.ios() },
+        { thname: `Xcode`, icon: skillIcons.xcode() },
+      ],
     },
-    // Javascript
     {
-      thname: `JavaScript`,
-      icon: `javascriptIcon.svg`,
+      title: theme.lang.skills.groups.design,
+      items: [
+        { thname: `Figma`, icon: skillIcons.figma() },
+        { thname: `Design systems`, icon: skillIcons.designSystem() },
+      ],
     },
-    // TypeScript
     {
-      thname: `TypeScript`,
-      icon: `typescriptIcon.svg`,
-    },
-    // React JS
-    {
-      thname: `React JS`,
-      icon: `reactJSIcon.svg`,
-    },
-    // Next JS
-    {
-      thname: `Next JS`,
-      icon: `nextJSIcon.svg`,
-    },
-    // Vite
-    {
-      thname: `Vite`,
-      icon: `viteIcon.svg`,
-    },
-    // styled components
-    {
-      thname: `styled components`,
-      icon: `styledcomponentsIcon.svg`,
-    },
-    // Tailwind
-    {
-      thname: `Tailwind`,
-      icon: `tailwindIcon.svg`,
-    },
-    // React Native
-    {
-      thname: `React Native`,
-      icon: `reactJSIcon.svg`,
-    },
-    // Expo
-    {
-      thname: `Expo`,
-      icon: `expoIcon.svg`,
-    },
-    // Firebase
-    {
-      thname: `Firebase`,
-      icon: `firebaseIcon.svg`,
-    },
-    // Android
-    {
-      thname: `Android`,
-      icon: `androidIcon.svg`,
-    },
-    // iOS
-    {
-      thname: `iOS`,
-      icon: `iosIcon.svg`,
-    },
-    // android studio
-    {
-      thname: `android studio`,
-      icon: `androidStudio.svg`,
-    },
-    // xCode
-    {
-      thname: `xCode`,
-      icon: `xCodeIcon.svg`,
-    },
-    // node JS
-    {
-      thname: `Node JS`,
-      icon: `nodejs.svg`,
-    },
-    // Express
-    {
-      thname: `Express JS`,
-      icon: `expressjs.svg`,
-    },
-    // MySQL
-    {
-      thname: `MySQL`,
-      icon: `mysql.svg`,
-    },
-    // JWT
-    {
-      thname: `JWT`,
-      icon: `jwt.svg`,
-    },
-    // Postman
-    {
-      thname: `Postman`,
-      icon: `postman.svg`,
-    },
-    // github
-    {
-      thname: `github`,
-      icon: `githubIcon.svg`,
-    },
-    // gitlab
-    {
-      thname: `gitlab`,
-      icon: `gitlab.svg`,
-    },
-    // git
-    {
-      thname: `git`,
-      icon: `gitIcon.svg`,
-    },
-
-    // Figma
-    {
-      thname: `Figma`,
-      icon: `figmaIcon.svg`,
-    },
-    // whimsical
-    {
-      thname: `whimsical`,
-      icon: `whimsicalIcon.svg`,
-    },
-    // uxtweak
-    {
-      thname: `uxtweak`,
-      icon: `uxtweakIcon.svg`,
-    },
-    // illustrator
-    {
-      thname: `illustrator`,
-      icon: `illustratorIcon.svg`,
-    },
-    // photoshop
-    {
-      thname: `photoshop`,
-      icon: `photoshopIcon.svg`,
+      title: theme.lang.skills.groups.transversal,
+      items: [
+        { thname: `Git`, icon: skillIcons.git() },
+        { thname: `GitHub`, icon: skillIcons.github(), mono: true },
+        { thname: `Node.js`, icon: skillIcons.node() },
+        { thname: `Express`, icon: skillIcons.express(), mono: true },
+        { thname: `MySQL`, icon: skillIcons.mysql() },
+        { thname: `JWT`, icon: skillIcons.jwt(), mono: true },
+        { thname: `Postman`, icon: skillIcons.postman() },
+        { thname: `Jira`, icon: skillIcons.jira() },
+        { thname: `Firebase`, icon: skillIcons.firebase() },
+        { thname: `Google Analytics`, icon: skillIcons.analytics() },
+        { thname: `Scrum`, icon: skillIcons.scrum() },
+        { thname: `Kanban`, icon: skillIcons.scrum() },
+      ],
     },
   ];
   const softH = [
-    {
-      thname: theme.lang.skills.soft.s1,
-      icon: <BsStars />,
-    },
-    {
-      thname: theme.lang.skills.soft.s2,
-      icon: <BsStars />,
-    },
-    {
-      thname: theme.lang.skills.soft.s3,
-      icon: <BsStars />,
-    },
-    {
-      thname: theme.lang.skills.soft.s4,
-      icon: <BsStars />,
-    },
-    {
-      thname: theme.lang.skills.soft.s5,
-      icon: <BsStars />,
-    },
-    {
-      thname: theme.lang.skills.soft.s6,
-      icon: <BsStars />,
-    },
-    {
-      thname: theme.lang.skills.soft.s7,
-      icon: <BsStars />,
-    },
-    {
-      thname: theme.lang.skills.soft.s8,
-      icon: <BsStars />,
-    },
-    {
-      thname: theme.lang.skills.soft.s9,
-      icon: <BsStars />,
-    },
-    {
-      thname: theme.lang.skills.soft.s10,
-      icon: <BsStars />,
-    },
-    {
-      thname: theme.lang.skills.soft.s11,
-      icon: <BsStars />,
-    },
+    theme.lang.skills.soft.s1,
+    theme.lang.skills.soft.s2,
+    theme.lang.skills.soft.s3,
+    theme.lang.skills.soft.s4,
+    theme.lang.skills.soft.s5,
   ];
-
-  const renderTecnicalH = tecnicalH.map((item, index) => (
-    <TecnicalItem
-      key={item.thname + index}
-      icon={item.icon}
-      thname={item.thname}
-    />
-  ));
-  const renderSoftH = softH.map((item, index) => (
-    <SoftItem key={item.thname + index} thname={item.thname} />
-  ));
 
   return (
     <Container>
       <H2>{theme.lang.skills.techP}</H2>
-      <ContainerTecnical>{renderTecnicalH}</ContainerTecnical>
-      <H2>{theme.lang.skills.softP}</H2>
-      <ContainerSoft>{renderSoftH}</ContainerSoft>
+      {groups.map((group) => (
+        <div key={group.title} style={{ display: `contents` }}>
+          <H3>{group.title}</H3>
+          <ContainerTecnical>
+            {group.items.map((item) => (
+              <TecnicalItem
+                key={item.thname}
+                icon={item.icon}
+                mono={item.mono}
+                thname={item.thname}
+              />
+            ))}
+          </ContainerTecnical>
+        </div>
+      ))}
+      <SoftTitle>{theme.lang.skills.softP}</SoftTitle>
+      <ContainerSoft>
+        {softH.map((name) => (
+          <SoftItem key={name} thname={name} />
+        ))}
+      </ContainerSoft>
     </Container>
   );
 };

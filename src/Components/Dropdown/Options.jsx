@@ -1,47 +1,55 @@
-// Style
-import styled from 'styled-components'
-const Options = ({ text, img, icon, id, setterLanguage }) => {
-  const ButtonOption = styled.button`
-    border: none;
-    display: flex;
-    gap: 4px;
+import styled from "styled-components";
 
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    font-variant: all-small-caps;
+const ButtonOption = styled.button`
+  border: none;
+  display: flex;
+  gap: 4px;
 
-    align-items: center;
-    justify-content: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  font-variant: all-small-caps;
 
-    padding: 0 16px;
-    height: 52px;
-    width: 90px;
-    border-radius: 100px;
-    background-color: '';
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 
-    cursor: pointer;
-    color: ${(props) => props.theme.mode.colors.text};
+  padding: 0 16px;
+  height: 52px;
+  width: 90px;
+  border-radius: 100px;
 
-    background: ${(props) => props.theme.mode.colors.bgNavBar};
+  cursor: pointer;
+  color: ${(props) => props.theme.mode.colors.text};
 
-    @media (max-width: 960px) {
-      width: 100%;
-    }
-    &:hover {
-      background-color: ${(propsTheme) => propsTheme.theme.mode.colors.lightGrey};
-    }
-  `
+  background: ${(props) => props.theme.mode.colors.bgNavBar};
 
-  return (
-    <ButtonOption onClick={() => id && setterLanguage(id)}>
-      <img alt="" src={`assets/icons/` + img} width={`20px`} />
-      {text}
-      {icon}
-    </ButtonOption>
-  )
-}
+  img,
+  svg {
+    display: block;
+    flex-shrink: 0;
+  }
 
-export default Options
+  @media (max-width: 960px) {
+    width: 100%;
+  }
+  &:hover {
+    background-color: ${(propsTheme) => propsTheme.theme.mode.colors.lightGrey};
+  }
+`;
+
+const Options = ({ text, img, icon, onPick, expanded }) => (
+  <ButtonOption
+    aria-expanded={expanded}
+    aria-haspopup={expanded === undefined ? undefined : `listbox`}
+    type="button"
+    onClick={() => onPick?.()}
+  >
+    <img alt={text} src={`/assets/icons/` + img} width={`20px`} />
+    {text}
+    {icon}
+  </ButtonOption>
+);
+
+export default Options;

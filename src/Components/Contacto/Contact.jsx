@@ -1,7 +1,10 @@
 import styled, { useTheme } from "styled-components";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { ImBehance2 } from "react-icons/im";
-import { IoMail, IoLogoGitlab } from "react-icons/io5";
+import {
+  BehanceLogo,
+  EnvelopeSimple,
+  GithubLogo,
+  LinkedinLogo,
+} from "@phosphor-icons/react";
 
 import SocialMediaItem from "./SocialMediaItem";
 const Contact = () => {
@@ -18,11 +21,12 @@ const Contact = () => {
     gap: 24px;
     padding-top: 92px;
 
-    & img {
+    & img.avatarImg {
       opacity: ${(props) => props.theme.mode.gifImg};
       align-self: center;
       width: 350px;
       object-fit: cover;
+      display: ${(props) => (props.theme.mode.gifImg === `0` ? `none` : `block`)};
       @media (max-width: 960px) {
         width: 250px;
       }
@@ -36,7 +40,7 @@ const Contact = () => {
     flex-direction: column;
     gap: 32px;
   `;
-  const H2 = styled.h2`
+  const H2 = styled.h1`
     font-family: "Convergence";
     font-style: normal;
     font-weight: 400;
@@ -44,25 +48,25 @@ const Contact = () => {
 
     color: ${(propsTheme) => propsTheme.theme.mode.colors.pink};
   `;
-  const H3 = styled.h3`
+  const H3 = styled.h2`
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     text-align: center;
   `;
-  const H4 = styled.h4`
+  const H4 = styled.p`
     font-family: "Roboto";
     font-style: normal;
     font-weight: 300;
-    font-size: 14x;
+    font-size: 14px;
     text-align: center;
   `;
   const SocialMediaContainer = styled.article`
     display: flex;
     flex-flow: row wrap;
     align-self: center;
-    justify-content: justify-between;
+    justify-content: space-between;
     gap: 16px;
     max-width: 480px;
     @media (max-width: 960px) {
@@ -72,29 +76,23 @@ const Contact = () => {
   const socialMediaCollection = [
     {
       scname: `nataliacamilavega`,
-      icon: <BsGithub />,
+      icon: <GithubLogo />,
       link: `https://github.com/nataliacamilavega`,
     },
     {
       scname: `Natalia Camila Vega`,
-      icon: <BsLinkedin />,
-      link: `https://www.linkedin.com/in/natalia-camila-vega-74783b228/`,
+      icon: <LinkedinLogo />,
+      link: `https://www.linkedin.com/in/nataliacamilavega/`,
     },
-    {
-      scname: `nataliacamilavega`,
-      icon: <IoLogoGitlab />,
-      link: `https://gitlab.com/nataliacamilavega`,
-    },
-    // Linkedin
     {
       scname: `nataliacamilav@gmail.com`,
-      icon: <IoMail />,
-      link: `nataliacamilav@gmail.com`,
+      icon: <EnvelopeSimple />,
+      link: `mailto:nataliacamilav@gmail.com`,
     },
 
     {
       scname: `nataliavega98`,
-      icon: <ImBehance2 />,
+      icon: <BehanceLogo />,
       link: `https://www.behance.net/nataliavega98`,
     },
   ];
@@ -116,7 +114,7 @@ const Contact = () => {
         <SocialMediaContainer>{renderSocialMedia}</SocialMediaContainer>
       </ContactTextContainer>
 
-      <img alt="" className="avatarImg" src="assets/custom/avatar.gif" />
+      <img alt="" className="avatarImg" src="/assets/custom/avatar.webp" />
     </Container>
   );
 };

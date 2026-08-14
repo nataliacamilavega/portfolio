@@ -1,30 +1,30 @@
-// Style
-import styled from 'styled-components'
-import { BsStars } from 'react-icons/bs'
+import styled from "styled-components";
+import { Sparkle } from "@phosphor-icons/react";
 
-const SoftItem = ({ thname }) => {
-  const Container = styled.div`
-    width: 200px;
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+`;
 
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  `
-  const P = styled.p`
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    font-variant: all-small-caps;
-    padding: 0 8px;
-  `
+const P = styled.p`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.45;
+  margin: 0;
+`;
 
-  return (
-    <Container>
-      <BsStars style={{ color: `#ffc107` }} />
-      <P>{thname}.</P>
-    </Container>
-  )
-}
+const SoftItem = ({ thname }) => (
+  <Container>
+    <Sparkle
+      aria-hidden="true"
+      style={{ color: `#ffc107`, flexShrink: 0, marginTop: `2px` }}
+    />
+    <P>{thname}</P>
+  </Container>
+);
 
-export default SoftItem
+export default SoftItem;
