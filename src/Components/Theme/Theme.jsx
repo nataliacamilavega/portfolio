@@ -192,9 +192,8 @@ const ES = {
     h2: `Sobre Mi`,
     p1: (
       <P>
-        Soy <Span>Técnica Superior en Desarrollo de Software</Span> por el
-        I.F.T.S. Nº 24 (marzo 2023 – julio 2026). Estoy especializada en{" "}
-        <Span>Frontend web y mobile</Span>, con base en{" "}
+        Soy <Span>Técnica Superior en Desarrollo de Software</Span> y estoy
+        especializada en <Span>Frontend web y mobile</Span>, con base en{" "}
         <Span>diseño UX/UI</Span> y visión de producto. Me gusta involucrarme
         desde las definiciones de negocio y experiencia de usuario hasta el
         desarrollo que conecta frontend y backend.
@@ -590,8 +589,7 @@ const EN = {
     h2: `About Me`,
     p1: (
       <P>
-        I am a <Span>Software Development Technician</Span> from I.F.T.S. No. 24
-        (March 2023 – July 2026). I specialize in{" "}
+        I am a <Span>Software Development Technician</Span> and I specialize in{" "}
         <Span>web and mobile frontend</Span>, with a background in{" "}
         <Span>UX/UI design</Span> and product thinking. I like to be involved
         from business and user-experience definitions through to the development
