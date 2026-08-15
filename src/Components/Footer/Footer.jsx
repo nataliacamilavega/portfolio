@@ -33,34 +33,66 @@ const Footer = () => {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    font-size: 16px;
+    gap: 16px;
     margin-bottom: 8px;
 
     .iconSocialMedia {
-      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 100px;
       color: ${(props) => props.theme.mode.colors.text};
+      transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .iconSocialMedia svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+
+    .iconSocialMedia:hover,
+    .iconSocialMedia:focus-visible {
+      color: ${(props) => props.theme.mode.colors.pink};
+      background-color: ${(props) => props.theme.mode.colors.lightPink};
+      transform: translateY(-2px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .iconSocialMedia {
+        transition: color 0.2s ease, background-color 0.2s ease;
+      }
+
+      .iconSocialMedia:hover,
+      .iconSocialMedia:focus-visible {
+        transform: none;
+      }
     }
   `;
   const socialMediaCollection = [
     {
       scname: `Natalia Camila Vega`,
-      icon: <LinkedinLogo />,
+      icon: <LinkedinLogo size={24} />,
       link: `https://www.linkedin.com/in/nataliacamilavega/`,
     },
     {
       scname: `nataliacamilavega`,
-      icon: <GithubLogo />,
+      icon: <GithubLogo size={24} />,
       link: `https://github.com/nataliacamilavega`,
     },
     {
       scname: `nataliavega98`,
-      icon: <BehanceLogo />,
+      icon: <BehanceLogo size={24} />,
       link: `https://www.behance.net/nataliavega98`,
     },
     {
       scname: `nataliacamilav@gmail.com`,
-      icon: <EnvelopeSimple />,
+      icon: <EnvelopeSimple size={24} />,
       link: `mailto:nataliacamilav@gmail.com`,
     },
   ];

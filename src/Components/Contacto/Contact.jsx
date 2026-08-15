@@ -76,23 +76,23 @@ const Contact = () => {
   const socialMediaCollection = [
     {
       scname: `nataliacamilavega`,
-      icon: <GithubLogo />,
+      icon: <GithubLogo size={22} />,
       link: `https://github.com/nataliacamilavega`,
     },
     {
       scname: `Natalia Camila Vega`,
-      icon: <LinkedinLogo />,
+      icon: <LinkedinLogo size={22} />,
       link: `https://www.linkedin.com/in/nataliacamilavega/`,
     },
     {
       scname: `nataliacamilav@gmail.com`,
-      icon: <EnvelopeSimple />,
+      icon: <EnvelopeSimple size={22} />,
       link: `mailto:nataliacamilav@gmail.com`,
     },
 
     {
       scname: `nataliavega98`,
-      icon: <BehanceLogo />,
+      icon: <BehanceLogo size={22} />,
       link: `https://www.behance.net/nataliavega98`,
     },
   ];
